@@ -1,0 +1,17 @@
+section.my-projects
+  .container.container--my-projects
+    .my-projects__title Мои работы
+    .my-projects__preview
+      .my-projects__preview-pic-wrapper
+        +image('content/user.jpg', 'my-projects__preview-pic')
+      .my-projects__preview-number 2
+      .my-projects__preview-description
+        ul.my-projects__preview-description-icons-list
+          li.my-projects__preview-description-icons-item
+          li.my-projects__preview-description-icons-item
+          li.my-projects__preview-description-icons-item
+        .my-projects__preview-description-title Сайт школы образования
+        .my-projects__preview-description-info.
+          Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бесонных ночей!
+        a.my-projects__preview-description-link(href='#' title='Посмотреть сайт')
+          +icon('link', 'my-projects__preview-description-link-icon')

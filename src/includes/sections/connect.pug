@@ -1,0 +1,19 @@
+section.connect
+  .container
+    .connect__title Связаться со мной
+    form(action="").form
+      .form__blocks
+        .form__row
+          label.form-label
+              .form__label-title Введите ваше имя
+              input(type="text" name="name" required).form__input
+        .form__row
+          label.form-label
+            .form__label-title Ведите ваш email
+            input(type="text" name="name" required).form__input
+        .form__row
+          label.form-label
+            .form__label-title Сообщение к письму
+            textarea(name="comment" required).form__input
+      .form__buttons
+        input.submit(type="submit" value="отправить")
