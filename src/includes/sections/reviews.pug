@@ -1,9 +1,19 @@
 section.reviews
   .container.container--reviews
     .reviews__title Что обо мне говорят
-    .reviews__arrows.
-      < >
+    .reviews__arrows
+      .reviews-arrow-left <
+      .reviews-arrow-right >
     ul.reviews__list
+      li.reviews__item
+        .reviews__item-message.
+          Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бесонных ночей!
+        .reviews__item-who-is-it
+          .reviews__item-pic-wrap
+            +image('content/user.jpg', 'reviews__item-pic')
+          .reviews__item-info  
+            .reviews__item-who-is-it-name Ковальчук Дмитрий
+            .reviews__item-who-is-it-status Основатель Loftschool
       li.reviews__item
         .reviews__item-message.
           Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бесонных ночей!
@@ -13,21 +23,16 @@ section.reviews
           .reviews__item-who-is-it-name Ковальчук Дмитрий
           .reviews__item-who-is-it-status Основатель Loftschool
       li.reviews__item
-        .reviews__item-message
+        .reviews__item-message.
+          Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бесонных ночей!
         .reviews__item-who-is-it
           .reviews__item-pic-wrap
             +image('content/user.jpg', 'reviews__item-pic')
           .reviews__item-who-is-it-name Ковальчук Дмитрий
           .reviews__item-who-is-it-status Основатель Loftschool
       li.reviews__item
-        .reviews__item-message
-        .reviews__item-who-is-it
-          .reviews__item-pic-wrap
-            +image('content/user.jpg', 'reviews__item-pic')
-          .reviews__item-who-is-it-name Ковальчук Дмитрий
-          .reviews__item-who-is-it-status Основатель Loftschool
-      li.reviews__item
-        .reviews__item-message
+        .reviews__item-message.
+          Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бесонных ночей!
         .reviews__item-who-is-it
           .reviews__item-pic-wrap
             +image('content/user.jpg', 'reviews__item-pic')
