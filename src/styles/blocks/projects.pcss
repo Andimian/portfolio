@@ -2,6 +2,12 @@
   width: 100%;
   background-color: white;
   position: relative;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+  z-index: -1;
+  padding-top: 20rem;
+  padding-bottom: 10rem;
 }
 
 .container--projects {
@@ -12,40 +18,79 @@
 
 .projects__title {
   position: absolute;
-  top: 5%;
-  left: 15%;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 36px;
+  top: 12rem;;
+  left: 10%;
+  color: #353e4f;
 }
 
 .projects__preview {
-  width: 80%;
-  height: 60%;
+  width: 100%;
+  height: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .projects__preview-pic-wrapper {
-  width: 60%;
+  width: 65%;
   height: 100%;
 }
 
 .projects__preview-number {
   font-size: 15rem;
+  font-size: 400px;
+  color: #e6e6e6;
+  font-weight: 800;
+  font-style: normal;
+  padding-left: -43px;
 }
 
 .projects__preview-description {
-  height: 60%;
+  height: auto;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+.projects__preview-description-title {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: normal;
+  color: #353e4f;
+  margin-bottom: 2rem;
+}
+
+.projects__preview-description-info {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  color: rgba(47, 54, 66, 0.7);
+  line-height: 1.88;
+  letter-spacing: normal;
+  margin-bottom: 2rem;
 }
 
 .projects__preview-description-icons-list {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .projects__preview-description-icons-item {
-  padding: 0.5rem;
-  background-color: aqua;
-  margin-right: 3rem;
+  padding: 0.7rem;
+  background-color: #859fc242;
+  margin-right: 2rem;
+  /* margin-bottom: 1rem; */
   border-radius: 1rem;
+  font-size: 15px;
+  color: rgba(47, 54, 66, 0.7);
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .projects__preview-description-link-wrap {
@@ -61,7 +106,8 @@
 }
 
 .projects__preview-description-link {
-  color: #0c2fcd; 
+  color: #0c2fcd;
+  font-size: 18px;
 }
 
 
@@ -77,3 +123,4 @@
     color: black;
   }
 }
+
