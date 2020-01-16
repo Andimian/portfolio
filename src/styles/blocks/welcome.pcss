@@ -63,15 +63,28 @@ text-align: left;
   display: flex;
   align-items: center;
   padding-bottom: 0.5rem;
+  &:hover {
+    color: #ac782b;
+  }
+  &:hover .scroll__icon {
+    fill: #ac782b;
+  }
 }
 
 .scroll__text {
   margin-right: 0.5rem;
+  
 }
 
 .scroll__icon {
   width: 26px;
   height: 30px;
   fill: #fff;
+  &:hover {
+    fill: #ac782b;
+  }
+}
 
+.scroll__icon:hover + .scroll__text {
+  color: #ac782b;
 }

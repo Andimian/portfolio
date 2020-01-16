@@ -1,13 +1,14 @@
 .projects {
   width: 100%;
+  min-height: 68rem;
   background-color: white;
   position: relative;
   font-family: 'Open Sans';
   font-weight: 600;
   font-style: normal;
-  z-index: -1;
   padding-top: 20rem;
   padding-bottom: 10rem;
+  z-index: 0;
 }
 
 .container--projects {
@@ -22,7 +23,7 @@
   font-style: normal;
   font-size: 36px;
   top: 12rem;;
-  left: 10%;
+  left: 11%;
   color: #353e4f;
 }
 
@@ -35,17 +36,20 @@
 }
 
 .projects__preview-pic-wrapper {
-  width: 65%;
+  width: 66%;
   height: 100%;
+  z-index: 100;
 }
 
 .projects__preview-number {
   font-size: 15rem;
+  width: 220px;
   font-size: 400px;
   color: #e6e6e6;
   font-weight: 800;
   font-style: normal;
-  padding-left: -43px;
+  margin-left: -43px;
+  z-index: 90;
 }
 
 .projects__preview-description {
@@ -106,7 +110,7 @@
 }
 
 .projects__preview-description-link {
-  color: #0c2fcd;
+  color: #4b6fd7;
   font-size: 18px;
 }
 
@@ -114,7 +118,7 @@
 .projects__preview-description-link-icon {
   width: 16px;
   height: 16px;
-  fill: #0c2fcd;
+  fill: #4b6fd7;
   margin-right: 1rem;
   &:hover {
     fill: black;
