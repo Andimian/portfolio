@@ -6,14 +6,20 @@ section.connect
         .form__row
           label.form-label
               .form__label-title Введите ваше имя
-              input(type="text" name="name" required).form__input
+              .form__input-wrap
+                +icon('Avatar', 'form__input-pic')
+                input(type="text" name="name" placeholder='Ivan Opohmelov' required).form__input
         .form__row
           label.form-label
             .form__label-title Ведите ваш email
-            input(type="text" name="name" required).form__input
+            .form__input-wrap
+              +icon('envelope', 'form__input-pic')
+              input(type="text" name="name" placeholder='ololo@mail.ru' required).form__input
         .form__row
           label.form-label
             .form__label-title Сообщение к письму
-            textarea(name="comment" required).form__input
+            .form__input-wrap
+              +icon('message', 'form__input-pic')
+              textarea(name="comment" placeholder='Здравствуйте, друзья посоветовали мне вас, как человека, который сможет создать крутой проект на высочайшем уровне. Я хотел бы договориться с вами о встрече.' required).form__input
       .form__buttons
         input.submit(type="submit" value="отправить")
