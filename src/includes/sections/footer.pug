@@ -6,7 +6,7 @@ footer.footer
         .footer__copyright-right-block-name Антон Соколов
         .footer__copyright-right-block-subject-of-agreement Личный сайт <br> веб-разработчика
     .footer__info
-      +nav('nav', ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'], 5)
+      +nav('nav', {'Главная': 'welcome', 'Обо мне': 'about-me', 'Навыки': 'scills', 'Работы': 'projects', 'Отзывы': 'reviews', 'Связаться': 'connect'}, 5)
       .footer__info-additional
         .footer__info-additional-text Этот сайт я сделал в рамках обучения в школе онлайн образования Loftschool
         include ../components/socials

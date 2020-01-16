@@ -1,13 +1,13 @@
-section.welcome
+section.welcome#welcome
     .container.container--welcome
         header.header
             .initials СА
-            +nav('nav', ['Главная', 'Обо мне', 'Навыки', 'Работы', 'Отзывы', 'Связаться'], 0)
+            +nav('nav', {'Главная': 'welcome', 'Обо мне': 'about-me', 'Навыки': 'scills', 'Работы': 'projects', 'Отзывы': 'reviews', 'Связаться': 'connect'}, 0)
             include ../components/socials
             .hamburger-menu
         .welcome__title-wrap
             .welcome__title-info Личный сайт <br>веб разработчика
             .welcome__title-author Антон<br>Соколов
         .scroll 
-            .scroll__text Скролл
+            .scroll__text#about-me Скролл
             +icon('scroll', 'scroll__icon')

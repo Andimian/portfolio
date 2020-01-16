@@ -37,7 +37,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  &:before {
+  
+ 
+}
+
+.reviews-arrow-left:before {
   content: '';
   position: absolute;
   width: 2rem;
@@ -47,7 +51,16 @@
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
+  &:hover {
+    color: orange;
+    .reviews-arrow-left-svg {
+      fill: orange;
+    }
   }
+}
+
+.reviews-arrow-left:hover:before {
+  border: 1px solid orange;
 }
 
 .reviews-arrow-left-svg {
@@ -56,6 +69,9 @@
   height: 10px;
   position: relative;
   transform: rotate(180deg);
+  &:hover {
+    fill: orange;
+  }
 }
 
 .reviews-arrow-right {
@@ -81,6 +97,9 @@
   width: 10px;
   height: 10px;
   position: relative;
+  &:hover {
+    fill: orange;
+  }
 }
 
 .reviews__list {
