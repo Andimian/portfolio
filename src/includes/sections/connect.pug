@@ -14,13 +14,12 @@ section.connect#connect
             .form__label-title Ведите ваш email
             .form__input-wrap
               +icon('envelope', 'form__input-pic')
-              input(type="text" name="name" placeholder='gvtx@mail.ru' required).form__input
+              input(type="email" name="name" placeholder='gvtx@mail.ru' required).form__input
         .form__row
           label.form-label
             .form__label-title Сообщение к письму
             .form__input-wrap
               +icon('message', 'form__input-pic')
-              textarea(name="comment" placeholder='Здравствуйте, друзья посоветовали мне вас, как человека, который сможет создать крутой проект на высочайшем уровне. Я хотел бы договориться с вами о встрече.' required).form__textarea
+              textarea(name="comment" placeholder='Здравствуйте, мне посоветовали вас друзья, нужен проект интернет-магазина. Я хотела бы договориться с вами о встрече.' required).form__textarea
       .form__buttons
         input.submit(type="submit" value="отправить")
-        a(href="#") dfg

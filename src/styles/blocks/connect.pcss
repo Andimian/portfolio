@@ -4,12 +4,11 @@
   font-weight: bold;
   font-style: normal;
   color: #ffffff;
+  padding-bottom: 4rem;
 }
 
 .container--connect {
   margin-left: 0 auto;
-  /* width: 60%;
-  padding-left: 10%; */
 }
 
 .connect__title {
@@ -34,7 +33,14 @@
   margin-right: 2.5rem;
   margin-bottom: 2rem;
   height: auto;
+  &:hover .form__input-pic {
+  fill: #7b08b6;
+  }
+  &:hover {
+    border-bottom: 1px solid #7b08b6;
+  }
 }
+
 
 .form__label-title {
   padding-left: 1.9rem;
@@ -43,12 +49,13 @@
 }
 
 .form__input {
+  height: 2rem;
   width: 100%;
   outline: none;
   background-color: transparent;
   border: none;
   color: white;
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .form__input::-webkit-input-placeholder {
