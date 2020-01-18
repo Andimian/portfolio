@@ -109,8 +109,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover .reviews-arrow-right-svg {
-      fill: #ffa500;
+    cursor: pointer;
+    &:hover {
+      background-color: #5500f2;
+    }
+    .slider__arrow-next-svg {
+    fill: #fff;
+    width: 10px;
+    height: 10px;
+    position: relative;
     }
   }
 
@@ -119,10 +126,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    &:hover .reviews-arrow-left-svg {
-      fill: #ffa500;
+    cursor: pointer;
+    &:hover {
+    background-color: #5500f2;
     }
-  }
+    .slider__arrow-prev-svg {
+    fill: #fff;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    transform: rotate(180deg);
+    }
+  }  
 }
 
 .slider__number {
@@ -183,18 +198,6 @@
   margin-bottom: 11%;
 }
 
-.slider__description-link-wrap {
-  
-  &:hover {
-    .slider__description-link {
-      color: black;
-    }
-    .slider__description-link-icon {
-      fill: black;
-    }
-  }
-}
-
 .slider__description-link-icon {
   width: 16px;
   height: 16px;
@@ -211,6 +214,9 @@
 .slider__description-link {
   color: #4b6fd7;
   font-size: 18px;
+  &:hover {
+    border-bottom: 1px solid #4b6fd7;
+  }
 }
 
 
