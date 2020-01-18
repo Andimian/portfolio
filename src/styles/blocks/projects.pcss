@@ -6,8 +6,8 @@
   font-family: 'Open Sans';
   font-weight: 600;
   font-style: normal;
-  padding-top: 20rem;
-  padding-bottom: 10rem;
+  padding-top: 17.6%;
+  padding-bottom: 9%;
   z-index: 0;
 }
 
@@ -22,7 +22,7 @@
   font-weight: bold;
   font-style: normal;
   font-size: 36px;
-  top: 12rem;;
+  top: 17.6%;;
   left: 11%;
   color: #353e4f;
 }
@@ -33,43 +33,71 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  position: relative;
 }
 
 .slider__pic-wrapper {
   position: relative;
   width: 66%;
-  height: 100%;
+  height: 34rem;
   z-index: 100;
 }
 
 .slider__pic {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
 
 /* --------------------------------абсолют с превьюшками и стрелками */
 .slider__menu {
   background-color: #353e4f;
-  width: 79%;
+  width: 51.5%;
   height:18%;
   position: absolute;
-  left: 26.3%;
-  top: 71%;
+  left: 17.8%;
+  top: 70.6%;
+  z-index: 150;
   display: flex;
+
+}
+
+.slider__menu-list {
+  display: flex;
+  width: 111.1%;
+  height: 100%;
 }
 
 .slider__menu-item {
-  width: 23%;
+  width: 25%;
+  height: 100%;
+  position: relative;
   border: 1px solid #63636324;
-  &:hover {
-    border: 3px solid #ffa500;
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #5500f266;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+  }
+  &:hover:after {
+    display: block;
   }
 }
+
 .slider__menu-item.active {
-  border: 3px solid #ffa500;
+  outline: 3px solid #ffa500;
 }
 
 .slider__menu-pic {
   cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .slider__arrows {
@@ -104,8 +132,10 @@
   color: #e6e6e6;
   font-weight: 800;
   font-style: normal;
-  margin-left: -43px;
+  margin-left: -3.7875rem;
+  margin-top: -3.4rem;
   z-index: 90;
+  align-self: flex-start;
 }
 
 .slider__description {
@@ -118,7 +148,7 @@
 
 .slider__icons-list {
   display: flex;
-  margin-bottom: 4rem;
+  margin-bottom: 11%;
 }
 
 .slider__icons-item {
@@ -139,7 +169,8 @@
   font-weight: bold;
   font-style: normal;
   color: #353e4f;
-  margin-bottom: 2rem;
+  margin-bottom: 9%;
+  line-height: 1.6;
 }
 
 .slider__description-info {
@@ -149,7 +180,7 @@
   color: rgba(47, 54, 66, 0.7);
   line-height: 1.88;
   letter-spacing: normal;
-  margin-bottom: 2rem;
+  margin-bottom: 11%;
 }
 
 .slider__description-link-wrap {

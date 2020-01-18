@@ -1,23 +1,24 @@
 section.projects#projects
   .container.container--projects
     .projects__title Мои работы
-    .slider
+    .slider.slider--projects
       .slider__pic-wrapper
         +image('content/burgers.jpg', 'slider__pic')
         //- меню из картинок
-        ul.slider__menu
+      .slider__menu
+        ul.slider__menu-list
           li.slider__menu-item
             +image('content/afrodita.jpg', 'slider__menu-pic')
           li.slider__menu-item.active
             +image('content/burgers.jpg', 'slider__menu-pic')
           li.slider__menu-item
           li.slider__menu-item
-          .slider__arrows
-            .slider__arrow-next
-              //-  иконки отстилизованы для отзывов
-              +icon('Short Arrow', 'reviews-arrow-right-svg')
-            .slider__arrow-prev
-              +icon('Short Arrow', 'reviews-arrow-left-svg')
+        .slider__arrows
+          //-  иконки отстилизованы для отзывов
+          .slider__arrow-next
+            +icon('Short Arrow', 'reviews-arrow-right-svg')
+          .slider__arrow-prev
+            +icon('Short Arrow', 'reviews-arrow-left-svg')
       .slider__number 2
       .slider__description
         ul.slider__icons-list
