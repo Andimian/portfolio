@@ -1,0 +1,177 @@
+.reviews {
+  height: auto;
+  width: 61%;
+  padding-top: 7%;
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  min-height: 61vh;
+}
+
+.container--reviews {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.reviews__title {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 36px;
+  margin-right: 7.4rem;
+  color: white;
+  margin-bottom: 6rem;
+  padding-left: 18%;
+}
+
+.reviews__arrows {
+  margin-bottom: 6rem;
+  display: flex;
+  flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+/* левая стрелочка -------------------------------*/
+.reviews-arrow-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 4.5rem;
+}
+.reviews-arrow-left:before {
+  content: '';
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100px;
+  border: 1px solid white;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.reviews-arrow-left:hover:before {
+  border: 1px solid orange;
+}
+/* чтобы при ховере бефора ховерилась свг */
+.reviews-arrow-left:hover .reviews-arrow-left-svg {
+  fill: orange;
+}
+.reviews-arrow-left-svg {
+  fill: #fff;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  transform: rotate(180deg);
+  &:hover {
+    fill: orange;
+  }
+}
+
+/* правая стрелочка ------------------------------- */
+.reviews-arrow-right {
+  font-size: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:before {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100px;
+    border: 1px solid white;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+}
+.reviews-arrow-right:hover:before {
+  border: 1px solid orange;
+}
+/* чтобы при ховере бефора ховерилась свг */
+.reviews-arrow-right:hover .reviews-arrow-right-svg {
+  fill: orange;
+}
+.reviews-arrow-right-svg {
+  fill: #fff;
+  width: 10px;
+  height: 10px;
+  position: relative;
+  &:hover {
+    fill: orange;
+  }
+}
+
+.reviews__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  /* было 16  */
+  max-height: 20rem;
+}
+
+.reviews__item {
+  position: relative;
+  margin-bottom: 6rem;
+  width: 28%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 11rem;
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 4.5rem;
+    height: 4.5rem;
+    top: 0;
+    right: 100;
+    opacity: 0.05;
+    transform: translate(-130%, 0);
+    background: svg-load('quote.svg', fill=#ffffff, width=100%, height=100%);
+  }
+}
+
+.reviews__item-message {
+  margin-bottom: 1.4rem;
+  min-height: 5.6rem;
+  line-height: 1.88;
+  letter-spacing: normal;
+  min-height: 7.6rem;
+}
+
+.reviews__item-who-is-it {
+  display: flex;
+}
+
+.reviews__item-who-is-it-name {
+  color: white;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 18px;
+}
+
+.reviews__item-who-is-it-status {
+  font-size: 16px;
+}
+
+.reviews__item-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.reviews__item-pic-wrap {
+  width: 23%;
+  margin-right: 2.2rem;
+}
+
+.reviews__item-pic {
+  border-radius: 100px;
+}

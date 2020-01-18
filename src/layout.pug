@@ -1,0 +1,23 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  include ./includes/head.pug
+  block title
+    title Главная страница
+  body
+    .wrapper
+      //- .maincontent
+      //-   +image('content/user.jpg', 'user-pic')
+      //- +icon('link', 'link-class')
+      //-   .icon-bg
+      .paralax-bg
+        include ./includes/sections/welcome
+        include ./includes/sections/about-me.pug
+      include ./includes/sections/scills.pug
+      include ./includes/sections/projects.pug
+      .autumn-bg
+        +image('content/leaves.png', 'autumn__pic')
+        include ./includes/sections/reviews.pug
+        include ./includes/sections/connect.pug
+      include ./includes/sections/footer.pug

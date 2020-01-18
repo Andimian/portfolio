@@ -1,23 +1,4 @@
-include ./mixins.pug
+extends ./layout.pug
 
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Portfolio | main page
-  body
-    .wrapper
-      //- .maincontent
-      //-   +image('content/user.jpg', 'user-pic')
-      //-   +icon('link', 'link-class')
-      //-   .icon-bg
-      section.welcome
-      .container
-        header.header
-          .initials ВА
-          .hamburger-menu
-        .welcome__title-wrap
-          .welcome__title-info Личный сайт веб разработчика
-          .welcome__title-author Антон Соколов
+block title
+  title portfolio

@@ -1,0 +1,33 @@
+section.projects#projects
+  .container.container--projects
+    .projects__title Мои работы
+    .slider.slider--projects
+      .slider__pic-wrapper
+        +image('content/burgers.jpg', 'slider__pic')
+        //- меню из картинок
+      .slider__menu
+        ul.slider__menu-list
+          li.slider__menu-item
+            +image('content/afrodita.jpg', 'slider__menu-pic')
+          li.slider__menu-item.active
+            +image('content/burgers.jpg', 'slider__menu-pic')
+          li.slider__menu-item
+          li.slider__menu-item
+        .slider__arrows
+          //-  иконки отстилизованы для отзывов
+          .slider__arrow-next
+            +icon('Short Arrow', 'slider__arrow-next-svg')
+          .slider__arrow-prev
+            +icon('Short Arrow', 'slider__arrow-prev-svg')
+      .slider__number 2
+      .slider__description
+        ul.slider__icons-list
+          li.slider__icons-item HTML
+          li.slider__icons-item CSS
+          li.slider__icons-item javascript
+        .slider__description-title Сайт сети бургерных
+        .slider__description-info.
+          Проект, созданный в рамках обучения в школе онлайн образования Loftschool. Красочнй лендинг с постраничным скроллом.
+        .slider__description-link-wrap
+          +icon('link', 'slider__description-link-icon')
+          a.slider__description-link(href='https://sokolov45.github.io/burgers/dist' title='При клике вы попадёте на сайт этого проекта') Посмотреть сайт

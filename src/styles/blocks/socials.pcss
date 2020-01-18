@@ -1,0 +1,47 @@
+.socials {
+  display: flex;
+}
+
+.socials__item {
+  margin-right: 2.8rem;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__pic {
+  width: 25px;
+  height: 25px;
+  fill: rgba(128, 128, 128, 1);
+  &:hover {
+    fill: #f49506;
+    transition: .5s;
+  }
+}
+
+/* иконки в подвале -----------------------------------------*/
+.footer .socials {
+  padding-left: 1rem;
+}
+
+.footer .socials__item {
+  position: relative;
+  &:before {
+    width: 3rem;
+    height: 3rem;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid rgba(128, 128, 128, 1);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+}
+.footer .socials__item:hover:before {
+  border: 1px solid #f49506;
+}
+.footer .socials__item:hover .socials__pic {
+  fill: #f49506;
+  transition: .5s;
+}
