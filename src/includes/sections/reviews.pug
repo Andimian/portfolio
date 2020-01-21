@@ -2,10 +2,10 @@ section.reviews#reviews
   .container--reviews
     .reviews__title Что обо мне говорят
     .reviews__arrows
-      .reviews-arrow-left
-        +icon('Short Arrow', 'reviews-arrow-left-svg')
-      .reviews-arrow-right
-        +icon('Short Arrow', 'reviews-arrow-right-svg')
+      .reviews__arrows-item.reviews__arrows-item--left
+        +icon('Short Arrow', 'reviews__arrow-left-svg')
+      .reviews__arrows-item.reviews__arrows-item--right
+        +icon('Short Arrow', 'reviews__arrow-right-svg')
     ul.reviews__list
       li.reviews__item
         .reviews__item-message.

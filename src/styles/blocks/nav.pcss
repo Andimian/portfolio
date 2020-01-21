@@ -5,14 +5,41 @@
 .nav__item {
   margin-right: 3.8rem;
   height: 2rem;
+  position: relative;
   &:last-child {
     margin-right: 0;
   }
   &:hover {
     color: #ac782b;
-    transition: .5s;
-    border-bottom: 1px solid #ac782b;
+    transition: .3s;
   }
+  &:before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #ac782b;
+    transition: width .2s ease-in-out, left .2s ease-in-out;
+    left: 50%;
+    bottom: 0;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #ac782b;
+    transition: width .2s ease-in-out;
+    left: 50%;
+    bottom: 0;
+  }
+  &:hover:before{
+    width: 90%;
+    left: -40%;
+    }
+  &:hover::after{
+    width: 90%;
+    }
 }
 
 /*-------------------------- навигашка в футере */

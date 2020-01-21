@@ -37,49 +37,14 @@
   cursor: pointer;
 }
 
-/* левая стрелочка -------------------------------*/
-.reviews-arrow-left {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-right: 30%;
-}
-.reviews-arrow-left:before {
-  content: '';
-  position: absolute;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 100px;
-  border: 1px solid white;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-}
-.reviews-arrow-left:hover:before {
-  border: 1px solid orange;
-}
-/* чтобы при ховере бефора ховерилась свг */
-.reviews-arrow-left:hover .reviews-arrow-left-svg {
-  fill: orange;
-}
-.reviews-arrow-left-svg {
-  fill: #fff;
-  width: 10px;
-  height: 10px;
-  position: relative;
-  transform: rotate(180deg);
-  &:hover {
-    fill: orange;
+.reviews__arrows-item {
+  &--left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 30%;
   }
-}
-
-/* правая стрелочка ------------------------------- */
-.reviews-arrow-right {
-  font-size: 1.5rem;
-  position: relative;
-  display: flex;
-  align-items: center;
-  &:before {
+  &--left:before {
     content: '';
     position: absolute;
     width: 3rem;
@@ -90,23 +55,61 @@
     top: 50%;
     left: 50%;
   }
-}
-.reviews-arrow-right:hover:before {
-  border: 1px solid orange;
-}
-/* чтобы при ховере бефора ховерилась свг */
-.reviews-arrow-right:hover .reviews-arrow-right-svg {
-  fill: orange;
-}
-.reviews-arrow-right-svg {
-  fill: #fff;
-  width: 10px;
-  height: 10px;
-  position: relative;
-  &:hover {
+  &--left:hover:before {
+    border: 1px solid orange;
+  }
+  &:hover .reviews__arrow-left-svg {
     fill: orange;
   }
+  /* чтобы при ховере бефора ховерилась свг */
+  .reviews__arrow-left-svg {
+    fill: #fff;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    transform: rotate(180deg);
+    &:hover {
+      fill: orange;
+    }
+  }
+
+  /* правая стрелочка ------------------------------- */
+  &--right {
+    font-size: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100px;
+      border: 1px solid white;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+  &--right:hover:before {
+    border: 1px solid orange;
+  }
+  /* чтобы при ховере бефора ховерилась свг */
+  &--right:hover .reviews__arrow-right-svg {
+    fill: orange;
+  }
+  .reviews__arrow-right-svg {
+    fill: #fff;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    &:hover {
+      fill: orange;
+    }
+  }
 }
+
+
 
 .reviews__list {
   display: flex;
