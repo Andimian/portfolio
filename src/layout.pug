@@ -7,11 +7,8 @@ html(lang="en")
     title Главная страница
   body
     .wrapper
-      //- .maincontent
-      //-   +image('content/user.jpg', 'user-pic')
-      //- +icon('link', 'link-class')
-      //-   .icon-bg
-      .paralax-bg
+      .start-section
+        include ./includes/sections/paralax.pug
         include ./includes/sections/welcome
         include ./includes/sections/about-me.pug
       include ./includes/sections/scills.pug
@@ -21,3 +18,4 @@ html(lang="en")
         include ./includes/sections/reviews.pug
         include ./includes/sections/connect.pug
       include ./includes/sections/footer.pug
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
