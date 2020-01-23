@@ -12,7 +12,7 @@
   min-height: 61vh;
 }
 
-.container--reviews {
+.reviews__header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -38,6 +38,7 @@
 }
 
 .reviews__arrows-item {
+  background-color: transparent;
   &--left {
     position: relative;
     display: flex;
@@ -110,18 +111,19 @@
 }
 
 
-
 .reviews__list {
   display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  /* flex-wrap: wrap; */
   justify-content: flex-end;
   /* было 16  */
   max-height: 20rem;
   overflow: hidden; 
+  position: relative;
 }
 
 .reviews__item {
-  position: relative;
+  position: absolute;
   margin-bottom: 10%;
   width: 28%;
   display: flex;

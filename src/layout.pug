@@ -15,7 +15,10 @@ html(lang="en")
       include ./includes/sections/projects.pug
       .autumn-bg
         +image('content/leaves.png', 'autumn__pic')
-        include ./includes/sections/reviews.pug
+        //- include ./includes/sections/reviews.pug
+        #app-reviews-slider
         include ./includes/sections/connect.pug
       include ./includes/sections/footer.pug
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+      //- шаблончики для вью
+      include ./includes/templates_for_vue/reviews.pug
