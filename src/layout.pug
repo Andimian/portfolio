@@ -11,7 +11,8 @@ html(lang="en")
         include ./includes/sections/paralax.pug
         include ./includes/sections/welcome
         include ./includes/sections/about-me.pug
-      include ./includes/sections/scills.pug
+      #app-skills
+      //- include ./includes/sections/scills.pug
       include ./includes/sections/projects.pug
       .autumn-bg
         +image('content/leaves.png', 'autumn__pic')
@@ -22,3 +23,4 @@ html(lang="en")
 
       //- шаблончики для вью
       include ./includes/templates_for_vue/reviews.pug
+      include ./includes/templates_for_vue/skills.pug

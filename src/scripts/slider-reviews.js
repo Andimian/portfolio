@@ -41,7 +41,7 @@ new Vue({
         initialIndex: 0,
         prevNextButtons: false,
         pageDots: false,
-				wrapAround: true,
+				wrapAround: false,
 				groupCells: true,
 				autoPlay: 6000,
       }
