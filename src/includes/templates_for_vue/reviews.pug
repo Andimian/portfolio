@@ -7,7 +7,7 @@ script(type="x/template")#reviews
           +icon('Short Arrow', 'reviews__arrow-left-svg')
         button.reviews__arrows-item.reviews__arrows-item--right(@click="next")
           +icon('Short Arrow', 'reviews__arrow-right-svg')
-    .eviews__list
+    .reviews__list
       flickity(class="reviews__slider-list" ref="flickity", :options="flickityOptions")
         .reviews__item
           .reviews__item-message.

@@ -44,6 +44,9 @@
     display: flex;
     align-items: center;
     margin-right: 30%;
+}
+  &--left:focus {
+    outline: none;
   }
   &--left:before {
     content: '';
@@ -74,12 +77,19 @@
     }
   }
 
+
+
+
+
   /* правая стрелочка ------------------------------- */
   &--right {
     font-size: 1.5rem;
     position: relative;
     display: flex;
     align-items: center;
+    &:focus {
+    outline: none;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -112,7 +122,7 @@
 
 
 .reviews__list {
-  display: flex;
+  /* display: flex; */
   width: 100%;
   /* flex-wrap: wrap; */
   justify-content: flex-end;
@@ -122,15 +132,24 @@
   position: relative;
 }
 
+.reviews__slider-list {
+  width: 100%;
+  /* outline: none;
+  box-shadow: 0 0 0 5px #19F; */
+}
+
 .reviews__item {
   position: absolute;
   margin-bottom: 10%;
-  width: 28%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  margin-right: 11rem;
-  &:nth-child(2n) {
+  /* margin-right: 11rem; */
+  /* &:nth-child(2n) {
     margin-right: 0;
+  } */
+  &:focus {
+      border: 1px solid #29B0D9;
   }
   &:before {
     content: '';
