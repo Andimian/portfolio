@@ -53,9 +53,9 @@
   &:hover .form__input-pic {
   fill: #ffa500;
   }
-  &:hover {
+  /* &:hover {
     border-bottom: 1px solid #ffa500;
-  }
+  } */
   .form__label-title {
     margin-bottom: 1.5%;
   }
@@ -88,8 +88,8 @@
 .form__input {
   position: relative;
   padding-left: 15%;
-  padding-bottom: 2%;
-  height: 2rem;
+  padding-bottom: 6%;
+  height: 3rem;
   width: 100%;
   outline: none;
   background-color: transparent;
@@ -123,8 +123,17 @@
   height: 2rem;
   position: absolute;
   left: 0;
+  top: 0;
   fill: rgba(255, 255, 255, 0.3);
-  padding-bottom: 2%;
+  &--textarea {
+    top: 40%;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 0;
+    fill: rgba(255, 255, 255, 0.3);
+    top: 10%;
+  }
 }
 /* .form__input-wrap-pic {
   margin-right: 4%;
@@ -139,17 +148,24 @@
   background-color: transparent;
   border: none;
   color: white;
-  min-height: 5.5rem;
+  height: 6rem;
   font-size: 18px;
   font-weight: bold;
   line-height: 2;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  &:focus {
-  border-bottom: 1px solid #ffa500;
+  &:hover {
+    border-bottom: 1px solid #ffa500;
+  }
+  &:hover ~ .form__input-pic--textarea{
+    fill: #ffa500;
   }
 }
 
-.form__textarea:focus ~ .form__input-pic {
+.form__textarea:focus {
+  border-bottom: 1px solid #ffa500;
+}
+
+.form__textarea:focus ~ .form__input-pic--textarea {
   fill: #ffa500;
 }
 
