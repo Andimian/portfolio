@@ -43,8 +43,7 @@ new Vue({
         pageDots: false,
 				wrapAround: true,
 				groupCells: true,
-				autoPlay: 5000,
-        // any options from Flickity can be used
+				autoPlay: 6000,
       }
     }
   },

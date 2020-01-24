@@ -7,22 +7,19 @@ section.connect#connect
           label.form-label
             .form__label-title Введите ваше имя
             .form__input-wrap
-              .form__input-wrap-pic
-                +icon('Avatar', 'form__input-pic')
               input(type="text" name="name" placeholder='Василиса Прекрасная' required).form__input
+              +icon('Avatar', 'form__input-pic')
         .form__row
           label.form-label
             .form__label-title Ведите ваш email
             .form__input-wrap
-              .form__input-wrap-pic
-                +icon('envelope', 'form__input-pic')
               input(type="email" name="name" placeholder='gvtx@mail.ru' required).form__input
+              +icon('envelope', 'form__input-pic')  
         .form__mes
           label.form-label
             .form__label-title Сообщение к письму
             .form__input-wrap
-              .form__input-wrap-pic
-                +icon('message', 'form__input-pic')
               textarea(name="comment" placeholder='Здравствуйте, мне посоветовали вас друзья, нужен проект интернет-магазина. Я хотела бы договориться с вами о встрече.' required).form__textarea
+              +icon('message', 'form__input-pic')
       .form__buttons
         input.submit(type="submit" value="отправить")
