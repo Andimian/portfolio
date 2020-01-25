@@ -9,10 +9,10 @@ script(type="x/template")#skills-template-vue
       .scills__characteristics
         ul.scills__main-group-list(v-for="item in data")
           li.skills__main-group-item
-            h3.skills__main-group-item-title {{item.groupTitle}}
-              skillRow(
-                :skills="item.skills"
-              )
+            h3.scills__characteristics-title {{item.groupTitle}}
+            skillRow(
+              :skills="item.skills"
+            )
       .scills__pic-wrapper
         +image('content/hands.png', 'scills__pic')
 
@@ -24,23 +24,14 @@ script(type="x/template")#skills-row
                 :percent='skillPercent'
             )
 
-//- script(type="x/template")#skill
-//-     svg(width="140" height="140" viewBox="0 0 100 100").scill__svg
-//-       circle(r="47" cx="50" cy="50" fill="transparent" stroke="#393939" stroke-width="2")
-//-       defs
-//-         linearGradient#gradient(x1="0%" y1="0%" x2="0%" y2="100%")
-//-           stop(offset="0%" stop-color="rgba(255, 165, 0, 1)")
-//-           stop(offset="100%" stop-color="#cd7000")
-//-       circle.scill__svg-circle-under-html(cx="50" cy="50" r="47" stroke="url(#gradient)" ref="under-circle" stroke-width="6" fill="none" transform='rotate(180 50 50)')
-//-     h5.scill__text {{title}}
 script(type="x/template")#skill
   .skill
-    svg(viewBox="0 0 200 200" width="140" height="140" preserveAspectRatio="none").scill__svg
+    svg(width="140" height="140" viewBox="0 0 100 100" preserveAspectRatio="none").scill__svg
       g.js-skill-circle.js-skill-circle
-        circle(fill="none" stroke-width="9" stroke="#eaeaea" r="90" cx="100" cy="100")
-        circle.scill__svg-circle-under-html(fill="none" ref="color-circle" stroke-width="20" r="90" cx="100" cy="100" 
-        stroke="url(#circle-gradient)").
-        linearGradient(id='circle-gradient' )
-          stop(offset="0%"  stop-color="#9200ef")
-          stop(offset="100%" stop-color="#5500f2")
+        circle(r="47" cx="50" cy="50" fill="none" stroke="#393939" stroke-width="2")
+        circle.scill__svg-circle-under-html(cx="50" cy="50" r="47" stroke="url(#gradient)" ref="color-circle" stroke-width="6" fill="none" transform='rotate(180 50 50)')
+        defs
+          linearGradient#gradient(x1="0%" y1="0%" x2="0%" y2="100%")
+            stop(offset="0%" stop-color="rgba(255, 165, 0, 1)")
+            stop(offset="100%" stop-color="#cd7000")
     h5.scill__text {{title}}

@@ -7,7 +7,7 @@
   font-style: normal;
   overflow: hidden;
   position: relative;
-  margin-bottom: 4.4%;
+  margin-bottom: 4.8%;
   color: rgba(255, 255, 255, 0.5);
   min-height: 61vh;
 }
@@ -44,9 +44,15 @@
     display: flex;
     align-items: center;
     margin-right: 30%;
-}
+  }
   &--left:focus {
     outline: none;
+  }
+  &--left:disabled .reviews__arrow-left-svg {
+    fill: #a8a09299;
+  }
+  &--left:disabled:before {
+    color: #a8a09299;
   }
   &--left:before {
     content: '';
@@ -77,6 +83,8 @@
     }
   }
 
+
+  
   /* правая стрелочка ------------------------------- */
   &--right {
     font-size: 1.5rem;
@@ -84,7 +92,7 @@
     display: flex;
     align-items: center;
     &:focus {
-    outline: none;
+      outline: none;
     }
     &:before {
       content: '';
@@ -101,6 +109,12 @@
   &--right:hover:before {
     border: 1px solid orange;
   }
+  &--right:disabled:before {
+    color: #a8a09299;
+  }
+  &--right:disabled .reviews__arrow-right-svg {
+    fill: #a8a09299;
+  }
   /* чтобы при ховере бефора ховерилась свг */
   &--right:hover .reviews__arrow-right-svg {
     fill: orange;
@@ -116,36 +130,42 @@
   }
 }
 
-
-.reviews__list {
-  /* display: flex; */
-  width: 100%;
-  /* flex-wrap: wrap; */
-  justify-content: flex-end;
-  /* было 16  */
-  max-height: 20rem;
-  overflow: hidden; 
-  position: relative;
+/* состояние disabled у стрелочек слайдера */
+.reviews__arrows-item--left:disabled:before {
+  border: 1px solid #a8a09299;
+}
+.reviews__arrows-item--left:disabled:hover:before {
+  border: 1px solid orange;
+}
+.reviews__arrows-item--right:disabled:before {
+  border: 1px solid #a8a09299;
+}
+.reviews__arrows-item--right:disabled:hover:before {
+  border: 1px solid orange;
 }
 
 .reviews__slider-list {
+  min-height: 20rem;
+  overflow: hidden; 
+  position: relative;
   width: 100%;
-  padding-left: 52%;
+  padding-left: 16%;
+  height: 10%;
 }
 
 .reviews__item {
   position: absolute;
-  margin-bottom: 10%;
   width: 50%;
   display: flex;
   flex-direction: column;
-  /* margin-right: 11rem; */
-  /* &:nth-child(2n) {
+  height: 14rem;
+  /* &:nth-child(4n) {
     margin-right: 0;
   } */
-  &:focus {
+  /* &:focus {
       border: 1px solid #29B0D9;
-  }
+  } */
+  padding-left: 15%;
   &:before {
     content: '';
     position: absolute;
