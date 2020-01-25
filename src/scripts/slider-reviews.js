@@ -43,7 +43,7 @@ new Vue({
         pageDots: false,
 				wrapAround: false,
 				groupCells: true,
-				autoPlay: 6000,
+				// autoPlay: 6000,
       }
     }
   },

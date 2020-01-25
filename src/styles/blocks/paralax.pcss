@@ -1,63 +1,57 @@
 .paralax {
   height: 185vh;
-  width: 100%;
-  /* background: url('~images/content/welcome-bg.jpg')no-repeat center center; */
-  /* background-size: cover; */
+  width: 120%;
   position: absolute;
   overflow: hidden;
-
 }
 
 .paralax__layer {
-  position: absolute;
+  background-size: cover;
   top: 0;
-  left: 0;
+  left: -10%;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
 
   &:nth-child(1) {
     .paralax__pic {
     object-fit: cover;
-    top: 0;
-    width: 100%;
+    width: 110%;
+    left: -5%;
+    top: -5%; 
+    z-index: 10;
     }
   }
 
   &:nth-child(2) {
     .paralax__pic {
-    top: 20%;
-    left: 0;
-    width: 100%;
+    top: 22%;
+    left: -5%;
+    width: 110%;
+    z-index: 5;
     }
   }
   &:nth-child(3) {
     .paralax__pic {
-    top: 30%;
-    left: 0;
-    width: 100%;
-    z-index: 20;
+    top: 32%;
+    left: -5%;
+    width: 110%;
     }
   }
   &:nth-child(4) {
     .paralax__pic {
     top: 55%;
-    width: 100%;
-    z-index: 30;
+    width: 110%;
+    left: -5%;
     }
   }
   &:nth-child(5) {
     .paralax__pic {
-    top: 60%;
-    width: 100%;
+    top: 50%;
+    left: -5%;
+    width: 110%;
     z-index: 40;
-    }
-  }
-  &:nth-child(6) {
-    .paralax__pic {
-    z-index: 50;
-    top: 56%;
-    width: 100%;
-    height: 100%;
     }
   }
 }
