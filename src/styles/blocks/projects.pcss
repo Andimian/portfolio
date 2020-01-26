@@ -6,15 +6,21 @@
   font-family: 'Open Sans';
   font-weight: 600;
   font-style: normal;
-  padding-top: 17.3%;
+  padding-top: 27.3%;
   padding-bottom: 9%;
   z-index: 0;
+  @include tablets {
+    padding-bottom: 5%;
+  }
 }
 
 .container--projects {
   display: flex;
   justify-content: center;
   align-items: center;
+  @include phones {
+    width: 100%;
+  }
 }
 
 .projects__title {
@@ -22,9 +28,17 @@
   font-weight: bold;
   font-style: normal;
   font-size: 36px;
-  top: 17.6%;;
+  top: 17.6%;
   left: 11%;
   color: #353e4f;
+  @include tablets {
+    top: 10%;
+    left: 5%;
+  }
+  @include phones {
+    top: 5%;
+    left: 30%;
+  }
 }
 
 .slider {
@@ -34,6 +48,10 @@
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
+  @include tablets {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .slider__pic-wrapper {
@@ -41,6 +59,13 @@
   width: 66%;
   /* height: 34rem; */
   z-index: 100;
+  @include tablets {
+    width: 85%;
+  }
+  @include phones {
+    width: 100%;
+    margin-bottom: 5%;
+  }
 }
 
 .slider__pic {
@@ -60,13 +85,29 @@
   top: 70.6%;
   z-index: 150;
   display: flex;
-
+  @include tablets {
+    width: 78.5%;
+    height: 12%;
+    position: absolute;
+    left: 11.8%;
+    top: 26%;
+  }
+  @include phones {
+    width: 10%;
+    height: 10%;
+    position: absolute;
+    left: 90.5%;
+    top: 33.5%
+  }
 }
 
 .slider__menu-list {
   display: flex;
   width: 111.1%;
   height: 100%;
+  @include phones {
+    display: none;
+  }
 }
 
 .slider__menu-item {
@@ -103,6 +144,9 @@
 .slider__arrows {
   width: 8%;
   height: 100%;
+  @include phones {
+    width: 100%;
+  }
 
   .slider__arrow-next {
     height: 50%;
@@ -151,6 +195,9 @@
   margin-top: -3.4rem;
   z-index: 90;
   align-self: flex-start;
+  @include phones {
+    display: none;
+  }
 }
 
 .slider__description {
@@ -159,11 +206,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include tablets {
+    flex-basis: 50%;
+    text-align: center;
+  }
 }
 
 .slider__icons-list {
   display: flex;
   margin-bottom: 11%;
+  @include tablets {
+    justify-content: center;
+    margin-bottom: 5%;
+
+  }
 }
 
 .slider__icons-item {

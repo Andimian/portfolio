@@ -7,9 +7,10 @@
   font-family: 'Open Sans';
   font-weight: bold;
   color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
   @include tablets {
         padding-top: 21%;
-        min-height: 127vh;
+        min-height: 109vh;
   }
 }
 
@@ -22,8 +23,8 @@
 
 .scills__text {
   z-index: 50;
-  width: 45%;
-  padding-top: 9%;
+  width: 48%;
+  padding-top: 4.4%;
   padding-left: 6.5%;
   margin-bottom: 5.1%;
   display: flex;
@@ -33,6 +34,9 @@
     width: 68%;
     align-items: center;
     padding-top: 0;
+  }
+  @include phones {
+    width: 100%;
   }
 }
 
@@ -51,6 +55,13 @@
   }
 }
 
+.scill__text {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+ 
+}
 .scills__hello-from-author__sentiment {
   font-weight: 600;
   font-style: normal;
@@ -61,11 +72,20 @@
 .scills__characteristics {
   padding-left: 22.5%;
   z-index: 50;
+  @include desktop {
+    padding-left: 12.5%;
+  }
   @include tablets {
     width: 25%;
-    margin-left: -30rem;
+    margin-left: -26rem;
     padding: 0;
   }
+  @include phones {
+    width: 58%;
+    margin-left: -2rem;
+    padding-bottom: 50%
+  }
+  
 }
 
 .scills__characteristics-title {
@@ -74,16 +94,22 @@
   font-weight: bold;
   line-height: 2;
   color: white;
-
+  @include phones {
+    text-align: center;
+  }
 }
 
 .scills__list {
   position: relative;
-  width: 155%;
+  width: 168%;
   display: flex;
   margin-bottom: 6.7%;
   &:nth-last-child(1) {
     margin-bottom: 0;
+  }
+  @include phones {
+    flex-wrap: wrap;
+    
   }
 }
 
@@ -93,10 +119,28 @@
   &:last-child {
     margin-right: 0;
   }
+  @include desktop {
+    margin-right: 4.4%;
+  }
+  @include tablets {
+    margin-right: 7.4%;
+  }
 }
 
 .scill {
   margin: 0;
+}
+
+
+.scill__svg {
+  @include desktop {
+    width: 100px;
+    height: 100px;
+  }
+  @include tablets {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 /* html сделан для пробы как говорил Костя */
@@ -118,24 +162,26 @@
   }
 }
 
-.scill__text {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-}
 
 .scills__pic-wrapper {
-  height: 100%;
+  width: 38%;
   position: absolute;
-  top: 12.2%;
+  bottom: -5%;
   left: 0;
   color: rgb(2.6%, 85.1%, 2.6%);
   z-index: 160;
+  @include desktop {
+    left: -6%;
+  }
   @include tablets {
-    top: 54%;
+    top: 65%;
     left: 30%;
-    width: 52%;
+    width: 43%;
+  }
+  @include phones {
+    top: 79%;
+    left: 30%;
+    width: 43%;
   }
 }
 

@@ -1,10 +1,9 @@
 .welcome {
   height: 100vh;
   color: #fff;
-  margin-bottom: 8.5%;
+  margin-bottom: 2.5%;
   @include tablets {
     height: 100vh;
-    
   }
   @include phones {
     height: 80vh;
@@ -78,20 +77,23 @@
 }
 
 .welcome__title-author {
-font-size: 72px;
-font-family: 'Open Sans';
-font-weight: 800;
-font-stretch: normal;
-font-style: normal;
-line-height: 0.83;
-letter-spacing: normal;
-text-align: left;
+  font-size: 72px;
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.83;
+  letter-spacing: normal;
+  text-align: left;
+  @include tablets {
+    font-size: 62px;
+}
 }
 
 .scroll {
   display: flex;
   align-items: center;
-  padding-bottom: 0.6%;
+  padding-bottom: 8%;
   padding-left: 1%;
   width: 9%;
   z-index: 200;
@@ -110,10 +112,6 @@ text-align: left;
   margin-right: 9%;
   font-size: 18px;
   font-weight: 600;
-}
-
-.scroll__icon-wrap {
-
 }
 
 .scroll__icon {

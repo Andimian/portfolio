@@ -10,6 +10,9 @@
 .container--footer {
   display: flex;
   justify-content: center;
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__copyright {
@@ -20,11 +23,20 @@
   line-height: 0.63;
   color: rgba(255, 255, 255, 0.1);
   margin-right: 13%;
+  @include desktop {
+    flex-direction: column;
+  }
 }
 
 .footer__copyright-left-block {
   margin-right: 19%;
   white-space: nowrap;
+  @include desktop {
+    margin-bottom: 27%;
+  }
+  @include phones {
+    margin-bottom: 7%;
+  }
 }
 
 .footer__copyright-right-block-name {
@@ -34,39 +46,68 @@
   line-height: 1.5;
   color: #fff;
   margin-top: -8px;
+  @include phones {
+    margin-bottom: 1%;
+  }
 }
 
 .footer__copyright-right-block-subject-of-agreement {
   line-height: 1.88;
   font-size: 16px;
   white-space: nowrap;
+  @include phones {
+    margin-bottom: 10%;
+  }
 }
 
 .footer__info {
   display: flex;
   flex-wrap: wrap;
+  @include tablets {
+    width: 60%;
+    flex-direction: column;
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .footer__info-additional {
   max-width: 35%;
   margin-right: 17%;
+  @include tablets {
+    max-width: none;
+  }
 }
 
 .footer__info-additional-text {
   margin-bottom: 14%;
   color: rgba(255, 255, 255, 0.3);
   line-height: 1.88;
+  @include tablets {
+    margin-bottom: 7%;
+  }
+  @include phones {
+    margin-bottom: 15%;
+  }
 }
 
 .footer__info-quote {
   width: 40%;
   flex: 1;
+  @include tablets {
+    max-width: none;
+    width: 100%;
+  }
 }
 
 .footer__info-quote-message {
   margin-bottom: 10%;
   color: rgba(255, 255, 255, 0.3);
   line-height: 1.88;
+  @include behind-tab-desc {
+    margin-bottom: 1rem;
+    }
 }
 
 .footer__info-quote-author {

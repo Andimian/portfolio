@@ -4,7 +4,8 @@
 }
 
 .paralax {
-  height: 185vh;
+  /* height: 185vh; */
+  height: 100%;
   width: 100%;
   left: 0;
   top: 0;
@@ -15,10 +16,11 @@
         
   }
   @include desktop {
-    height: 140vh;
+    height: 100%;
   }
   @include tablets {
-    height: 138vh;
+    /* height: 138vh; */
+    height: 95%;
   }
   @include phones {
     height: 100vh;
@@ -30,7 +32,7 @@
   height: 100%;
 
   &:nth-child(1) {
-    width: 110%;
+    width: 120%;
     @include desktopBehind {
       width: 130%;
     }
@@ -61,7 +63,7 @@
     }
   }
   &:nth-child(2) {
-    width: 110%;
+    width: 120%;
     @include desktopBehind {
       width: 130%;
     }
@@ -136,8 +138,11 @@
     }
   }
   &:nth-child(4) {
-    width: 120%;
+    width: 130%;
     
+    @include desktopHd {
+      width: 150%;
+    }
     @include desktopBehind {
       width: 140%;
     }
@@ -152,13 +157,16 @@
       width: 110%;
     }
     .paralax__pic {
-      top: 56%;
+      top: 53%;
       left: -5%;
+      @include desktopHd {
+        top: 56%;
+      }
       @include desktopBehind {
         top: 53%;
       }
       @include desktop {
-        top: 58%;
+        top: 57%;
       }
       @include tablets {
         top: 54%;
@@ -207,7 +215,7 @@
         bottom: 22%;
       }
       @include phones {
-        
+        bottom: 18%;
         top: auto;
       }
     }
@@ -239,7 +247,7 @@
         top: 50%;
       }
       @include phones {
-        
+        top: 58%;
       }
     }
   }

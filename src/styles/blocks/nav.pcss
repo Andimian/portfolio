@@ -53,5 +53,15 @@
 
 /*-------------------------- навигашка в футере */
 .footer .nav__list {
+  padding-left: 1rem;
   margin-bottom: 7%;
+  @include behind-tab-desc {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include tablets {
+    display: flex;
+    
+    flex-wrap: wrap;
+    }
 }

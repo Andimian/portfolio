@@ -10,6 +10,7 @@ new Vue({
 
   data() {
     return {
+			desktop: window.matchMedia("(min-width: 480px)").matches,
       flickityOptions: {
         initialIndex: 0,
         prevNextButtons: false,
@@ -17,10 +18,11 @@ new Vue({
 				wrapAround: false,
 				groupCells: true,
 				freeScroll: false,
-				contain: true
+				contain: true,
+				groupCells: 1
 				// autoPlay: 6000,
       }
-    }
+    };
   },
   
   methods: {
@@ -38,7 +40,7 @@ new Vue({
 	// },
 	// created() {
 	// 	this.setFlickityGroupCells();
-	// }
+	// },
 		checkArrows() {
 			var prev = this.$el.querySelector('.reviews__arrows-item--left');
 			var next = this.$el.querySelector('.reviews__arrows-item--right');

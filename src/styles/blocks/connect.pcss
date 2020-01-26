@@ -14,11 +14,23 @@
 .connect__title {
   font-size: 36px;
   margin-bottom: 5.5%;
+  @include phones {
+    text-align: center;
+  }
+  
+
 }
 
 .form {
   width: 62%;
   height: 100%;
+  @include desktop {
+    width: 82%;
+  }
+  @include tablets {
+    width: 100%;
+  }
+  
 }
 
 .form__blocks {
@@ -63,6 +75,8 @@
   .form__input-pic {
     /* margin-right: 2%; */
     padding-top: 1.5%;
+    
+    
   }
 }
 
@@ -157,6 +171,10 @@
   &:hover ~ .form__input-pic--textarea{
     fill: #ffa500;
   }
+  @include phones {
+    padding-left: 15%;
+  }
+
 }
 
 .form__textarea:focus {
@@ -182,5 +200,8 @@
   cursor: pointer;
   &:hover {
     background-image: linear-gradient(to top, #ff8e24, #bc6a1d);
+  }
+  @include phones {
+    width: 100%;
   }
 }

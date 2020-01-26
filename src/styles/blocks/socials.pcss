@@ -54,6 +54,19 @@
 /* иконки в подвале -----------------------------------------*/
 .footer .socials {
   padding-left: 1.9rem;
+  @include behind-tab-desc {
+    margin-bottom: 3em;
+  }
+  @include phones {
+    display: flex;
+    margin-bottom: 30%;
+  }
+}
+
+.footer .socials__item {
+  @include behind-tab-desc {
+    margin-right: 4rem;
+    }
 }
 
 .footer .socials__link {

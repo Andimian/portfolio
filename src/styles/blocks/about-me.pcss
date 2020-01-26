@@ -7,9 +7,9 @@
   font-size: 1rem;
   z-index: 300;
   @include tablets {
-    background-color: #191a1c;
-    padding-top: 22%;
-    /* min-height: 77vh; */
+    background-color: #1b1f22;
+    padding-top: 8%;
+    min-height:46vh;
   }
 }
 
@@ -20,6 +20,10 @@
   @include tablets {
     width: 90%;
     justify-content: space-between;
+  }
+  @include phones {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -32,6 +36,9 @@
   z-index: 300;
   @include tablets {
   width: 40.3%;
+  }
+  @include phones {
+    width: 80%;
   }
 }
 
@@ -67,7 +74,10 @@
   width: 40.7%;
   @include tablets {
     width: 53%;
-    }
+  }
+  @include phones {
+    width: 88%;
+  }
 }
 
 .hello-from-author__hello {
