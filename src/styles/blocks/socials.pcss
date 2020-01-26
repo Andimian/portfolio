@@ -1,11 +1,31 @@
 .socials {
   display: flex;
+  @include tablets {
+  padding-left: 23%;
+  }
+  @include phones {
+    display: none;
+  }
 }
 
 .socials__item {
   margin-right: 4.3rem;
+  
   &:last-child {
     margin-right: 0;
+  }
+  @include behind-tab-desc {
+    margin-right: 2.3rem;
+  }
+  @include desktop {
+  }
+
+  @include tablets {
+    margin-right: 4.3rem;
+    
+  }
+  @include phones {
+    width: 110%;
   }
 }
 
@@ -24,6 +44,10 @@
   &:hover {
     fill: #f49506;
     transition: .5s;
+  }
+  @include tablets {
+  width: 30px;
+  height: 30px;
   }
 }
 

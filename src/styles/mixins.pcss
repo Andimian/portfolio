@@ -4,8 +4,20 @@
   }
 }
 
+@mixin desktopBehind() {
+  @media screen and (max-width: $bp-desktop-behind) {
+    @content;
+  }
+}
+
 @mixin desktop() {
   @media screen and (max-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin behind-tab-desc() {
+  @media screen and (max-width: $behind-tab-desc) {
     @content;
   }
 }

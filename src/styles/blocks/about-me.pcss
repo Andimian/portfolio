@@ -6,12 +6,21 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 1rem;
   z-index: 300;
+  @include tablets {
+    background-color: #191a1c;
+    padding-top: 22%;
+    /* min-height: 77vh; */
+  }
 }
 
 .container--about-me {
   width: 70%;
   display: flex;
   justify-content: center;
+  @include tablets {
+    width: 90%;
+    justify-content: space-between;
+  }
 }
 
 .profile__wrapper {
@@ -21,6 +30,9 @@
   width: 24.3%;
   margin-right: 7.4%;
   z-index: 300;
+  @include tablets {
+  width: 40.3%;
+  }
 }
 
 .profile__pic-wrapper {
@@ -29,6 +41,7 @@
 }
 
 .profile__pic {
+
   border-radius: 100px;
 }
 
@@ -52,6 +65,9 @@
 .hello-from-author {
   z-index: 350;
   width: 40.7%;
+  @include tablets {
+    width: 53%;
+    }
 }
 
 .hello-from-author__hello {

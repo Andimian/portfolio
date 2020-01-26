@@ -7,6 +7,10 @@
   font-family: 'Open Sans';
   font-weight: bold;
   color: rgba(255, 255, 255, 0.5);
+  @include tablets {
+        padding-top: 21%;
+        min-height: 127vh;
+  }
 }
 
 .container--scills {
@@ -25,6 +29,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include tablets {
+    width: 68%;
+    align-items: center;
+    padding-top: 0;
+  }
 }
 
 .scills__main-group-list {
@@ -35,6 +44,11 @@
   margin-bottom: 8.6%;
   color: white;
   font-size: 30px;
+  @include tablets {
+    width: 60%;
+    text-align: center;
+    
+  }
 }
 
 .scills__hello-from-author__sentiment {
@@ -47,6 +61,11 @@
 .scills__characteristics {
   padding-left: 22.5%;
   z-index: 50;
+  @include tablets {
+    width: 25%;
+    margin-left: -30rem;
+    padding: 0;
+  }
 }
 
 .scills__characteristics-title {
@@ -88,34 +107,7 @@
   animation: scillAnimate 100s linear infinite;
   animation-play-state: paused;
   animation-delay: -50s; */
-  
 }
-/* .scill__svg-circle-under-css {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 100;
-}
-.scill__svg-circle-under-javascript {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 30;
-}
-.scill__svg-circle-under-jquery {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 252;
-}
-.scill__svg-circle-under-gulp {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 200;
-}.scill__svg-circle-under-git {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 50;
-}.scill__svg-circle-under-terminal {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 80;
-}
-.scill__svg-circle-under-webpack {
-  stroke-dasharray: 295;
-  stroke-dashoffset: 90;
-} */
 
 @keyframes scillAnimate {
   from {
@@ -140,4 +132,16 @@
   left: 0;
   color: rgb(2.6%, 85.1%, 2.6%);
   z-index: 160;
+  @include tablets {
+    top: 54%;
+    left: 30%;
+    width: 52%;
+  }
+}
+
+.scills__pic {
+  width: 100%;
+  @include tablets {
+    transform: rotate(-90deg);
+  }
 }

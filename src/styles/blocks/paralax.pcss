@@ -11,48 +11,236 @@
   position: absolute;
   overflow: hidden;
   z-index: -1;
+  @include desktopBehind {
+        
+  }
+  @include desktop {
+    height: 140vh;
+  }
+  @include tablets {
+    height: 138vh;
+  }
+  @include phones {
+    height: 100vh;
+  }
 }
 
 .paralax__layer {
   width: 100%;
   height: 100%;
+
   &:nth-child(1) {
     width: 110%;
+    @include desktopBehind {
+      width: 130%;
+    }
+    @include desktop {
+      width: 160%;
+    }
+    @include tablets {
+      width: 110%;
+    }
+    @include phones {
+      width: 110%;
+    }
     .paralax__pic {
     left: -1%;
     top: -1%; 
-    z-index: 10;
+      @include phones {
+        display: none;
+        &--mobile {
+          display: block;
+        }
+      }
+      @include tablets {
+        display: none;
+        &--mobile {
+          display: block;
+        }
+      }
     }
   }
-
   &:nth-child(2) {
     width: 110%;
+    @include desktopBehind {
+      width: 130%;
+    }
+    @include desktop {
+      width: 120%;
+    }
+    @include behind-tab-desc {
+      width: 150%;
+    }
+
+    @include tablets {
+      width: 170%;
+    }
+    @include phones {
+      width: 200%;
+    }
     .paralax__pic {
       top: 22%;
       left: -5%;
-      z-index: 5;
+      @include desktopBehind {
+      }
+      @include desktop {
+        top: 26%;
+      }
+      @include behind-tab-desc {
+        top: 28%;
+      }
+      @include tablets {
+        
+      }
+      @include phones {
+        top: 34%;
+      }
     }
   }
   &:nth-child(3) {
     width: 110%;
+    @include desktopBehind {
+      width: 130%;
+    }
+    @include desktop {
+      width: 110%;
+    }
+    @include behind-tab-desc {
+      width: 115%;
+    }
+    @include tablets {
+      width: 110%;
+    }
+    @include phones {
+      width: 160%;
+    }
     .paralax__pic {
       top: 31%;
       left: -5%;
+      @include desktopBehind {
+        top: 30%;
+      }
+      @include desktop {
+        top: 36%;
+      }
+      @include behind-tab-desc {
+        top: 40%;
+      }
+      @include tablets {
+        
+      }
+      @include phones {
+        top: 44%;
+      }
+      
     }
   }
   &:nth-child(4) {
-    width: 115%;
+    width: 120%;
+    
+    @include desktopBehind {
+      width: 140%;
+    }
+    @include desktop {
+      width: 110%;
+    }
+
+    @include tablets {
+      width: 110%;
+    }
+    @include phones {
+      width: 110%;
+    }
     .paralax__pic {
-      top: 58%;
+      top: 56%;
       left: -5%;
+      @include desktopBehind {
+        top: 53%;
+      }
+      @include desktop {
+        top: 58%;
+      }
+      @include tablets {
+        top: 54%;
+        /* &--mobile {
+          display: block;
+          bottom: -10%;
+        }
+        display: none;*/
+      }
+      
+      @include phones {
+        &--mobile {
+          display: block;
+          bottom: -10%;
+        }
+        display: none;
+        bottom: 0;
+        top: auto;
+      }
     }
   }
   &:nth-child(5) {
     width: 120%;
+      @include desktopBehind {
+        width: 130%;
+      }
+      @include desktop {
+        width: 140%;
+      }
+      @include tablets {
+        width: 110%;
+      }
+      @include phones {
+        width: 110%;
+      }
     .paralax__pic {
-      top: 46%;
+      bottom: 0;
       left: 0%;
-      z-index: 40;
+      @include desktopBehind {
+        
+      }
+      @include desktop {
+        
+      }
+      @include tablets {
+        bottom: 22%;
+      }
+      @include phones {
+        
+        top: auto;
+      }
+    }
+  }
+  &:nth-child(6) {
+    width: 120%;
+      @include desktopBehind {
+        width: 130%;
+      }
+      @include desktop {
+        width: 140%;
+      }
+      @include tablets {
+        width: 110%;
+      }
+      @include phones {
+        width: 110%;
+      }
+    .paralax__pic {
+      bottom: 0;
+      left: 0%;
+      @include desktopBehind {
+        
+      }
+      @include desktop {
+        
+      }
+      @include tablets {
+        top: 50%;
+      }
+      @include phones {
+        
+      }
     }
   }
 }
@@ -60,4 +248,9 @@
 .paralax__pic {
   position: absolute;
   width: 100%;
+  &--mobile {
+    display: none;
+    position: absolute;
+    width: 100%;
+  }
 }
