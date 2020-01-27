@@ -14,12 +14,13 @@ new Vue({
       flickityOptions: {
         initialIndex: 0,
         prevNextButtons: false,
-        pageDots: false,
+				pageDots: false,
+				cellAlign: 'left',
 				wrapAround: false,
 				groupCells: true,
 				freeScroll: false,
 				// contain: true,
-				groupCells: 2
+				// groupCells: 2
 				// autoPlay: 6000,
       }
     };
