@@ -19,7 +19,7 @@ new Vue({
 				groupCells: true,
 				freeScroll: false,
 				contain: true,
-				groupCells: 1
+				groupCells: auto
 				// autoPlay: 6000,
       }
     };

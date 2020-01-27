@@ -7,3 +7,4 @@ import "./scripts/skills";
 import "./scripts/paralax";
 import "./scripts/slider-reviews";
 import "./scripts/test-vue";
+import "./scripts/popup";
