@@ -1,0 +1,10 @@
+section.overlay
+  .container.container--overlay
+    header.overlay__header
+      .overlay__cross-wrap
+        +icon('Cross', 'overlay__cross-icon')
+    +nav('nav', {'Главная': 'welcome', 'Обо мне': 'about-me', 'Навыки': 'scills', 'Работы': 'projects', 'Отзывы': 'reviews', 'Связаться': 'connect'}, 0)
+    footer.overlay__footer
+      include ../components/socials
+    
+  
