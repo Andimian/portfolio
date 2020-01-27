@@ -10,7 +10,7 @@ new Vue({
 
   data() {
     return {
-			desktop: window.matchMedia("(min-width: 480px)").matches,
+			// desktop: window.matchMedia("(min-width: 480px)").matches,
       flickityOptions: {
         initialIndex: 0,
         prevNextButtons: false,
@@ -18,8 +18,8 @@ new Vue({
 				wrapAround: false,
 				groupCells: true,
 				freeScroll: false,
-				contain: true,
-				groupCells: auto
+				// contain: true,
+				groupCells: 2
 				// autoPlay: 6000,
       }
     };
@@ -35,12 +35,12 @@ new Vue({
 			this.checkArrows();
 		},
 
-	// 	setFlickityGroupCells() {
-	// 		this.flickityOptions.groupCells = this.desktop == true ? 2 : 1;
-	// },
-	// created() {
-	// 	this.setFlickityGroupCells();
-	// },
+		setFlickityGroupCells() {
+			this.flickityOptions.groupCells = this.desktop == true ? 2 : 1;
+	},
+	created() {
+		this.setFlickityGroupCells();
+	},
 		checkArrows() {
 			var prev = this.$el.querySelector('.reviews__arrows-item--left');
 			var next = this.$el.querySelector('.reviews__arrows-item--right');
