@@ -30,18 +30,21 @@ new Vue({
     next() {
 			this.$refs.flickity.next();
 			this.checkArrows();
-    },
+		},
+
+
+
     previous() {
 			this.$refs.flickity.previous();
 			this.checkArrows();
 		},
 
-		setFlickityGroupCells() {
-			this.flickityOptions.groupCells = this.desktop == true ? 2 : 1;
-	},
-	created() {
-		this.setFlickityGroupCells();
-	},
+	// 	setFlickityGroupCells() {
+	// 		this.flickityOptions.groupCells = this.desktop == true ? 2 : 1;
+	// },
+	// created() {
+	// 	this.setFlickityGroupCells();
+	// },
 		checkArrows() {
 			var prev = this.$el.querySelector('.reviews__arrows-item--left');
 			var next = this.$el.querySelector('.reviews__arrows-item--right');
@@ -52,7 +55,6 @@ new Vue({
 				next.disabled = false;
 
 			} else if (this.$refs.flickity.selectedIndex() == this.$refs.flickity.slides().length -1){
-				// console.log(this.$refs.flickity.slides().length);
 
 				this.$el.querySelector('.reviews__arrows-item--right').disabled = true;
 				this.$el.querySelector('.reviews__arrows-item--left').disabled = false;
@@ -63,3 +65,6 @@ new Vue({
 		}
 	}
 });
+
+
+

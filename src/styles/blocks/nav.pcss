@@ -22,6 +22,7 @@
     color: #ac782b;
     transition: .3s;
   }
+
   &:before {
     position: absolute;
     content: "";
@@ -48,9 +49,20 @@
     }
   &:hover::after{
     width: 90%;
-    }
+  }
+  &:focus:before {
+    width: 90%;
+    left: -40%;
+  }
+  &:focus:after {
+    width: 90%;
+    left: -40%;
+  }
 }
 
+/* .nav__item-link:focus {
+  color: #ac782b;
+} */
 /*-------------------------- навигашка в футере */
 .footer .nav__list {
   padding-left: 1rem;

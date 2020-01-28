@@ -29,11 +29,22 @@
   }
 }
 
+/* .socials__item:focus {
+  border: 3px solid #f49506;
+} */
+
 .socials__link {
   position: relative;
 }
+/* .socials__link:focus {
+  border: 3px solid #f49506;
+} */
 
-.socials__pic {
+.socials__link:focus .socials__pic{
+  fill: #f49506;
+}
+
+.socials__pic {   
   width: 22px;
   height: 22px;
   fill: rgba(128, 128, 128, 1);
@@ -44,6 +55,9 @@
   &:hover {
     fill: #f49506;
     transition: .5s;
+  }
+  &:focus {
+    fill: orange;
   }
   @include tablets {
   width: 30px;
@@ -69,6 +83,7 @@
     }
 }
 
+
 .footer .socials__link {
   position: relative;
   &:before {
@@ -89,6 +104,10 @@
 .footer .socials__link:hover .socials__pic {
   fill: #f49506;
   transition: .5s;
+}
+
+.footer .socials__link:focus:before {
+  border: 1px solid #f49506;
 }
 
 /* оверлей */

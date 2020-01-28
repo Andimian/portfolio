@@ -5,20 +5,19 @@ section.projects#projects
       .slider__pic-wrapper
         +image('content/burgers.jpg', 'slider__pic')
         //- меню из картинок
-      .slider__menu
-        ul.slider__menu-list
-          li.slider__menu-item
-            +image('content/afrodita.jpg', 'slider__menu-pic')
-          li.slider__menu-item.active
-            +image('content/burgers.jpg', 'slider__menu-pic')
-          li.slider__menu-item
-          li.slider__menu-item
-        .slider__arrows
-          //-  иконки отстилизованы для отзывов
-          .slider__arrow-next
-            +icon('Short Arrow', 'slider__arrow-next-svg')
-          .slider__arrow-prev
-            +icon('Short Arrow', 'slider__arrow-prev-svg')
+        .slider__menu
+          ul.slider__menu-list
+            li.slider__menu-item
+              +image('content/afrodita.jpg', 'slider__menu-pic')
+            li.slider__menu-item.active
+              +image('content/burgers.jpg', 'slider__menu-pic')
+            li.slider__menu-item
+            li.slider__menu-item
+          .slider__arrows
+            .slider__arrow-next(tabindex=-0)
+              +icon('Short Arrow', 'slider__arrow-next-svg')
+            .slider__arrow-prev(tabindex=-0)
+              +icon('Short Arrow', 'slider__arrow-prev-svg')
       .slider__number 2
       .slider__description
         ul.slider__icons-list

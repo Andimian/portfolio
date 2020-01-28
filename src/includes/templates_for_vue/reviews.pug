@@ -1,5 +1,5 @@
 script(type="x/template")#reviews
-  section.reviews
+  section.reviews(@click="checkArrows" @touchstart="checkArrows")
     .reviews__header
       .reviews__title Что обо мне говорят
       .reviews__arrows
@@ -8,7 +8,7 @@ script(type="x/template")#reviews
         button.reviews__arrows-item.reviews__arrows-item--right(@click="next" :disabled='false')
           +icon('Short Arrow', 'reviews__arrow-right-svg')
     //- .reviews__list
-    flickity(class="reviews__slider-list" ref="flickity", :options="flickityOptions")
+    flickity(class="reviews__slider-list" ref="flickity", :options="flickityOptions" )
       .reviews__item
         .reviews__item-message.
           Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 2 месяца только самых тяжёлых испытаний и бесонных ночей!

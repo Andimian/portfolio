@@ -19,7 +19,6 @@ const skill = {
 	},
 	mounted() {
     this.setColorCirclePercent();
-    console.log(dashArray);
     
 	}
 }

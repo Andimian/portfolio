@@ -58,6 +58,8 @@
 
 .reviews__arrows-item {
   background-color: transparent;
+  
+  /* левая стрелка-------------------- */
   &--left {
     position: relative;
     display: flex;
@@ -66,9 +68,22 @@
     @include phones {
       margin-right: 3rem;
     }
+    &:hover {
+      fill: orange;
+    }
+    &:focus {
+      outline: none;
+    }
+    
+    &:focus::before {
+      outline: none;
+      border: 1px solid orange;
+    }
   }
-  &--left:focus {
-    outline: none;
+  
+  
+  &:focus .reviews__arrow-left-svg  {
+    fill: orange;
   }
   &--left:disabled .reviews__arrow-left-svg {
     fill: #a8a09299;
@@ -100,22 +115,32 @@
     height: 10px;
     position: relative;
     transform: rotate(180deg);
-    &:hover {
-      fill: orange;
-    }
   }
+
 
 
   
   /* правая стрелочка ------------------------------- */
+
   &--right {
     font-size: 1.5rem;
     position: relative;
     display: flex;
     align-items: center;
+    
     &:focus {
       outline: none;
     }
+
+    &:focus::before {
+      outline: none;
+      border: 1px solid orange;
+    }
+
+    &:focus .reviews__arrow-right-svg  {
+      fill: orange;
+    }
+
     &:before {
       content: '';
       position: absolute;
@@ -151,6 +176,7 @@
     }
   }
 }
+
 
 /* состояние disabled у стрелочек слайдера */
 .reviews__arrows-item--left:disabled:before {
