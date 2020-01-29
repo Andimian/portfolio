@@ -22,7 +22,6 @@
     color: #ac782b;
     transition: .3s;
   }
-
   &:before {
     position: absolute;
     content: "";
@@ -49,22 +48,12 @@
     }
   &:hover::after{
     width: 90%;
-  }
-  &:focus:before {
-    width: 90%;
-    left: -40%;
-  }
-  &:focus:after {
-    width: 90%;
-    left: -40%;
-  }
+    }
 }
 
-/* .nav__item-link:focus {
-  color: #ac782b;
-} */
-/*-------------------------- навигашка в футере */
+/*=========================== навигашка в футере */
 .footer .nav__list {
+  height: 2rem;
   padding-left: 1rem;
   margin-bottom: 7%;
   @include behind-tab-desc {
@@ -78,7 +67,7 @@
     }
 }
 
-/* навигация popup */
+/*============================= навигация popup */
 .overlay .nav__list {
   display: flex;
   flex-direction: column;
@@ -88,5 +77,16 @@
 }
 
 .overlay .nav__item {
-  margin-bottom: 10%;
+  margin-bottom: 1rem;
+  width: fit-content;
+  height: 3rem;
+  &:hover:before {
+    width: 60%;
+    left: -10%;
+  }
+  &:hover:after {
+    width: 60%;
+
+    transition: .1s ease-in-out;
+  }
 }
