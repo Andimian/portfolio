@@ -56,6 +56,7 @@
     "promptly": "^3.0.3",
     "pug": "^2.0.3",
     "request": "^2.88.0",
+    "reset-css": "^5.0.1",
     "signale": "^1.4.0",
     "vue": "^2.6.7",
     "vue-flickity": "^1.2.1",
