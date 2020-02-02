@@ -16,7 +16,7 @@ script(type="text/x-template")#slider-display
       thumbs(
         :works="works"
         :currentWork="currentWork"
-        @slide="direction => $emit('slide', direction)"
+        @slide="direction => $emit('slide', direction)" 
       )
     number(
       :currentWork="currentWork"

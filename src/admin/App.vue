@@ -19,7 +19,6 @@
             .header__exit
               a(href='#').header__exit-link Выйти
         +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
-        
         .about-me
           .container.container--about-me
             .about-me__title-wrap 
@@ -47,28 +46,28 @@
                         .form-new__top-icons-edit
                     .form-edit-skill
                       input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
-                      input(type="text" name="scill" placeholder='50').form-edit-skill__percent
+                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
                       .form-edit-skill__percent-pic-wrap %
                       .form-edit-skill__btns
                         .form-edit-skill__btns-default
                         .form-edit-skill__btns-edit
                     .form-edit-skill
                       input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
-                      input(type="text" name="scill" placeholder='50').form-edit-skill__percent
+                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
                       .form-edit-skill__percent-pic-wrap %
                       .form-edit-skill__btns
                         .form-edit-skill__btns-default
                         .form-edit-skill__btns-edit
                     .form-edit-skill
                       input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
-                      input(type="text" name="scill" placeholder='50').form-edit-skill__percent
+                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
                       .form-edit-skill__percent-pic-wrap %
                       .form-edit-skill__btns
                         .form-edit-skill__btns-default
                         .form-edit-skill__btns-edit
                     .form-new__bottom
                       input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
-                      input(type="text" name="name" placeholder='0').form-new__bottom-percent
+                      input(type="number" name="name" placeholder='0').form-new__bottom-percent
                       .form-new__bottom-icon
                 li.about-me__editor-edit-group-item
                   form.form-edit
@@ -78,29 +77,53 @@
                         .form-new__top-icons-edit
                     .form-edit-skill
                       input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
-                      input(type="text" name="scill" placeholder='50').form-edit-skill__percent
+                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
                       .form-edit-skill__percent-pic-wrap %
                       .form-edit-skill__btns
                         .form-edit-skill__btns-default
                         .form-edit-skill__btns-edit
                     .form-edit-skill
                       input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
-                      input(type="text" name="scill" placeholder='50').form-edit-skill__percent
+                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
                       .form-edit-skill__percent-pic-wrap %
                       .form-edit-skill__btns
                         .form-edit-skill__btns-default
                         .form-edit-skill__btns-edit
                     .form-edit-skill
                       input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
-                      input(type="text" name="scill" placeholder='50').form-edit-skill__percent
+                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
                       .form-edit-skill__percent-pic-wrap %
                       .form-edit-skill__btns
                         .form-edit-skill__btns-default
                         .form-edit-skill__btns-edit
                     .form-new__bottom
                       input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
-                      input(type="text" name="name" placeholder='0').form-new__bottom-percent
+                      input(type="number" name="name" placeholder='0').form-new__bottom-percent
                       .form-new__bottom-icon
+        .projects
+          .container
+            .projects__title Добавление работы
+            .projects__add
+              form.projects__add-pic
+                label.projects__add-pic-label перетащите либо загрузите изображения
+                  input.projects__add-pic-submit(type="submit" value="загрузить")
+              .projects__add-desc
+                form.projects__add-desc-form
+                  input(type='text' placeholder='Название').projects__add-desc-input
+                  input(type='text' placeholder='Ссылка').projects__add-desc-input
+                  input(type='textarea' placeholder='Описание').projects__add-desc-input
+                  input(type='text' placeholder='Добавление тега').projects__add-desc-input
+                  .projects__add-desc-btns
+                    
+              .projects__add-btn
+              .projects__add-preview
+
+          
+
+
+
+
+
 
 
 </template>
@@ -259,11 +282,11 @@
 /* =======================================Блок Обо мне=================== */
   .about-me {
     background-color: #cbccd4;
-    height: 60vh;
+    min-height: 110vh;
   }
 
   .about-me__title-wrap {
-    height: 20%;
+    height: 8rem;
     display: flex;
     align-items: center;
   }
@@ -276,9 +299,9 @@
     position: relative;
     background-color: transparent;
     &:after {
-      width: 1rem;
-      height: 1rem;
-      left: -10%;
+      width: 0.9rem;
+      height: 0.9rem;
+      left: -9.9%;
       top: 50%;
       border-radius: 100px;
       transform: translate(-100%, -50%) rotate(45deg);
@@ -304,7 +327,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 2rem;
-    height: 80%;
+    height: 31rem;
   }
 
   .form-new {
@@ -420,7 +443,7 @@
     &:after {
       width: 1rem;
       height: 1rem;
-      left: -17%;
+      left: -19%;
       top: 50%;
       border-radius: 100px;
       transform: translate(-100%, -50%) rotate(45deg);
@@ -494,7 +517,7 @@
   .form-edit-skill__percent {
     border: none;
     position: relative;
-    width: 5%;
+    width: 7%;
 
     &:before {
       position: absolute;
@@ -581,5 +604,63 @@
       cursor: pointer;
       }
   }
+
+
+
+  /* страница добавление работы============================================================================ */
+.projects {
+  min-height: 50vh;
+}
+
+.projects__title {
+  height: 5rem;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.projects__add {
+  width: 100%;
+  display: flex;
+}
+
+.projects__add-pic {
+  width: 35%;
+  height: 15rem;
+  border: 1px dotted rgb(41.2%, 41.2%, 41.2%);
+  background-color: #c0c0c0;
+  
+}
+
+.projects__add-pic-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+
+.projects__add-pic-submit {
+  width: 15rem;
+  height: 5rem;
+  background-image: linear-gradient(to top, #d0731b, #dc9322);
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  &:hover {
+    background-image: linear-gradient(to top, #ff8e24, #bc6a1d);
+  }
+}
+
+/* блочок с описанием работы */
+.projects__add-desc-form {
+  display: flex;
+  flex-direction: column;
+}
+
 </style>
 
