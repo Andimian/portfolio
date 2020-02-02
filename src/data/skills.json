@@ -2,10 +2,10 @@
     {
         "groupTitle": "Frontend",
         "skills": {
-            "HTML5": 30,
-            "CSS3": 50,
+            "HTML5": 80,
+            "CSS3": 90,
             "JavaScript": 50,
-            "Vue.js": 100
+            "Vue.js": 25
         }
     },
     {

@@ -1,0 +1,74 @@
+script(type="x/template")#projects-template-vue
+  section.projects#projects
+    .container.container--projects
+      .projects__title Мои работы
+      display(
+      :works="works",
+      :currentWork="currentWork",
+      :currentIndex="currentIndex"
+      @slide="handleSlide"
+    )
+  
+script(type="text/x-template")#slider-display
+  .slider.slider--projects
+    .slider__pic-wrapper
+      img(:src="currentWork.photo").slider__pic
+      thumbs(
+        :works="works"
+        :currentWork="currentWork"
+        @slide="direction => $emit('slide', direction)"
+      )
+    number(
+      :currentWork="currentWork"
+    )
+    info(
+      :currentWork="currentWork"
+    )
+
+script(type="text/x-template")#slider-thumbs
+  //- меню из картинок
+  .slider__menu
+    ul.slider__menu-list
+      li.slider__menu-item(v-for="work in works" :key="work.id" :class="{active: currentWork.id === work.id }")
+        a.slider__menu-item-link
+          img(:src='work.photo' alt='').slider__menu-pic
+
+    btns(
+      @slide="direction => $emit('slide', direction)"
+    )
+
+script(type="text/x-template")#slider-btns             
+  .slider__arrows
+
+    //- эмиты это механизм для того чтобы при изменениии во внутреннем компоненте, можно было отреагировать во внешнем, 1-ый аргумент имя события, 2-ой данные которые с этим событием передаем
+    a(href="#" @click.prevent="$emit('slide', 'next')").slider__arrow-next
+      +icon('Short Arrow', 'slider__arrow-next-svg')
+
+    a(href="#" @click.prevent="$emit('slide', 'prev')").slider__arrow-prev
+      +icon('Short Arrow', 'slider__arrow-prev-svg')
+
+
+script(type="text/x-template")#slider-number
+  .slider__number {{currentWork.id}}
+
+
+script(type="text/x-template")#slider-tags
+  ul.slider__icons-list
+    li.slider__icons-item(v-for="tag in tagsArray")
+      .tag {{tag}}
+
+script(type="text/x-template")#slider-info
+  .slider__description
+
+    //- так можно просто рповерить пришёл массивчик или нет
+    //- pre {{tagsArray}}
+
+    tags(
+      :tagsArray="tagsArray"
+    )
+    .slider__description-title {{currentWork.title}}
+    .slider__description-info.
+      {{currentWork.desc}}
+    .slider__description-link-wrap
+      +icon('link', 'slider__description-link-icon')
+      a(:href="currentWork.link" title='При клике вы попадёте на сайт этого проекта').slider__description-link Посмотреть сайт

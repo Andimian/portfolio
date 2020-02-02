@@ -9,17 +9,22 @@ const skill = {
 	},
 	methods: {
 		setColorCirclePercent() {
-			const 
-				ref = this.$refs['color-circle'],
-				dashArray = parseInt(getComputedStyle(ref).strokeDasharray),
-				dashOffset = ( dashArray / 100 ) * (100 - this.percent);
+			
+			const	ref = this.$refs['color-circle']; //обратились к элементу дом с помощью встроенного инструмента вью - $refs
+
+			const	dashArray = parseInt(getComputedStyle(ref).strokeDasharray); //будем брать значения со стилей
+				// соответственно будет приходить строка для этого пользуем парсинт, гетКомпьютед чтобы извлечь стили 
+				// прописанные до нас и примененные браузером? Сабанцев писал getPropertyValue("stroke-dasharray") я сразу strokeDasharray 
+			const	dashOffset = ( dashArray / 100 ) * (100 - this.percent);
 
 			ref.style.strokeDashoffset = dashOffset;
+			
 		}
 	},
 	mounted() {
+		
     this.setColorCirclePercent();
-    
+		
 	}
 }
 

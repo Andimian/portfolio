@@ -13,7 +13,8 @@ html(lang="en")
         include ./includes/sections/welcome
         include ./includes/sections/about-me.pug
       #app-skills
-      include ./includes/sections/projects.pug
+      #app-projects
+      //- include ./includes/sections/projects.pug
       .autumn-bg
         +image('content/leaves.png', 'autumn__pic')
         #app-reviews-slider
@@ -26,3 +27,4 @@ html(lang="en")
       //- шаблончики для вью
       include ./includes/templates_for_vue/reviews.pug
       include ./includes/templates_for_vue/skills.pug
+      include ./includes/templates_for_vue/projects.pug

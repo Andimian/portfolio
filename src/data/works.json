@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "title": "Сайт фитнесс-центра",
+    "skills": "1 Html, Css, JavaScript",
+    "photo": "afrodita.jpg",
+    "link": "https://sokolov45.github.io/loftschool/",
+    "desc": "1 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+  },
+  {
+    "id": 2,
+    "title": "Сайт школы онлайн образования",
+    "skills": "2 Html, Css, JavaScript",
+    "photo": "burgers.jpg",
+    "link": "https://sokolov45.github.io/burgers/dist",
+    "desc": "2 Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!"
+  }
+
+]
