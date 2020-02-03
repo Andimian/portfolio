@@ -24,82 +24,82 @@
             .about-me__title-wrap 
               h1.about-me__title-about Блок "Обо мне"
               button.about-me__title-ad-group Добавить группу
-            //- дефолтная формочка
-            .about-me__editor
-              form.form-new
-                .form-new__top
-                  input(type="text" name="name" placeholder='название новой группы' required).form-new__top-input
-                  .form-new__top-icons
-                    .form-new__top-icon-default
-                    .form-new__top-icons-edit
-                .form-new__bottom
-                  input(type="text" name="name" required).form-new__bottom-scill
-                  input(type="text" name="name" placeholder='0').form-new__bottom-percent
-                  .form-new__bottom-icon
-              //- формы с сервера
-              ul.about-me__editor-edit-group-list
-                li.about-me__editor-edit-group-item
-                  form.form-edit
-                    .form-new__top Frontend
-                      .form-new__top-icons
-                        .form-new__top-icon-default
-                        .form-new__top-icons-edit
-                    .form-edit-skill
-                      input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
-                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                      .form-edit-skill__percent-pic-wrap %
-                      .form-edit-skill__btns
-                        .form-edit-skill__btns-default
-                        .form-edit-skill__btns-edit
-                    .form-edit-skill
-                      input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
-                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                      .form-edit-skill__percent-pic-wrap %
-                      .form-edit-skill__btns
-                        .form-edit-skill__btns-default
-                        .form-edit-skill__btns-edit
-                    .form-edit-skill
-                      input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
-                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                      .form-edit-skill__percent-pic-wrap %
-                      .form-edit-skill__btns
-                        .form-edit-skill__btns-default
-                        .form-edit-skill__btns-edit
-                    .form-new__bottom
-                      input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
-                      input(type="number" name="name" placeholder='0').form-new__bottom-percent
-                      .form-new__bottom-icon
-                li.about-me__editor-edit-group-item
-                  form.form-edit
-                    .form-new__top Frontend
-                      .form-new__top-icons
-                        .form-new__top-icon-default
-                        .form-new__top-icons-edit
-                    .form-edit-skill
-                      input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
-                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                      .form-edit-skill__percent-pic-wrap %
-                      .form-edit-skill__btns
-                        .form-edit-skill__btns-default
-                        .form-edit-skill__btns-edit
-                    .form-edit-skill
-                      input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
-                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                      .form-edit-skill__percent-pic-wrap %
-                      .form-edit-skill__btns
-                        .form-edit-skill__btns-default
-                        .form-edit-skill__btns-edit
-                    .form-edit-skill
-                      input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
-                      input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                      .form-edit-skill__percent-pic-wrap %
-                      .form-edit-skill__btns
-                        .form-edit-skill__btns-default
-                        .form-edit-skill__btns-edit
-                    .form-new__bottom
-                      input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
-                      input(type="number" name="name" placeholder='0').form-new__bottom-percent
-                      .form-new__bottom-icon
+            ul.about-me__editor-list
+              //- дефолтная формочка
+              li.about-me__editor-item
+                form.form-new
+                  .form-new__top
+                    input(type="text" name="name" placeholder='название новой группы' required).form-new__top-input
+                    .form-new__top-icons
+                      .form-new__top-icon-default
+                      .form-new__top-icons-edit
+                  .form-new__bottom
+                    input(type="text" name="name" required).form-new__bottom-scill
+                    input(type="number" name="number" placeholder='0').form-new__bottom-percent
+                    .form-new__bottom-icon
+                //- формы с сервера
+              li.about-me__editor-item      
+                form.form-edit
+                  .form-new__top Frontend
+                    .form-new__top-icons
+                      .form-new__top-icon-default
+                      .form-new__top-icons-edit
+                  .form-edit-skill
+                    input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
+                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                    .form-edit-skill__percent-pic-wrap %
+                    .form-edit-skill__btns
+                      .form-edit-skill__btns-default
+                      .form-edit-skill__btns-edit
+                  .form-edit-skill
+                    input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
+                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                    .form-edit-skill__percent-pic-wrap %
+                    .form-edit-skill__btns
+                      .form-edit-skill__btns-default
+                      .form-edit-skill__btns-edit
+                  .form-edit-skill
+                    input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
+                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                    .form-edit-skill__percent-pic-wrap %
+                    .form-edit-skill__btns
+                      .form-edit-skill__btns-default
+                      .form-edit-skill__btns-edit
+                  .form-new__bottom
+                    input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
+                    input(type="number" name="name" placeholder='0').form-new__bottom-percent
+                    .form-new__bottom-icon
+              li.about-me__editor-item
+                form.form-edit
+                  .form-new__top Frontend
+                    .form-new__top-icons
+                      .form-new__top-icon-default
+                      .form-new__top-icons-edit
+                  .form-edit-skill
+                    input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
+                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                    .form-edit-skill__percent-pic-wrap %
+                    .form-edit-skill__btns
+                      .form-edit-skill__btns-default
+                      .form-edit-skill__btns-edit
+                  .form-edit-skill
+                    input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
+                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                    .form-edit-skill__percent-pic-wrap %
+                    .form-edit-skill__btns
+                      .form-edit-skill__btns-default
+                      .form-edit-skill__btns-edit
+                  .form-edit-skill
+                    input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
+                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                    .form-edit-skill__percent-pic-wrap %
+                    .form-edit-skill__btns
+                      .form-edit-skill__btns-default
+                      .form-edit-skill__btns-edit
+                  .form-new__bottom
+                    input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
+                    input(type="number" name="name" placeholder='0').form-new__bottom-percent
+                    .form-new__bottom-icon
         .projects
           .container
             .projects__title Добавление работы
@@ -109,11 +109,28 @@
                   input.projects__add-pic-submit(type="submit" value="загрузить")
               .projects__add-desc
                 form.projects__add-desc-form
-                  input(type='text' placeholder='Название').projects__add-desc-input
-                  input(type='text' placeholder='Ссылка').projects__add-desc-input
-                  input(type='textarea' placeholder='Описание').projects__add-desc-input
-                  input(type='text' placeholder='Добавление тега').projects__add-desc-input
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Название
+                      input(type='text').projects__add-desc-input
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Ссылка
+                      input(type='text').projects__add-desc-input
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Описание
+                      textarea.projects__add-desc-textarea
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Добавление тега
+                      input(type='text').projects__add-desc-input
                   .projects__add-desc-btns
+                    input(type="reset" value="Отменa").projects__add-desc-reset
+                    input(type="submit" value="Загрузить").projects__add-pic-submit
+                                 //- класс у кнопки с соседней кнопочки
+                    
+                    
                     
               .projects__add-btn
               .projects__add-preview
@@ -133,7 +150,6 @@
 
 <style lang="postcss">
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
-  /* @import "reset.css"; */
   @import 'reset-css';
   @import "normalize.css";
   @import "../styles/mixins.pcss";
@@ -282,7 +298,6 @@
 /* =======================================Блок Обо мне=================== */
   .about-me {
     background-color: #cbccd4;
-    min-height: 110vh;
   }
 
   .about-me__title-wrap {
@@ -323,24 +338,31 @@
     }
   }
 
-  .about-me__editor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
-    height: 31rem;
+/* ul с панельками редактора */
+  .about-me__editor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start
+    
   }
 
+  .about-me__editor-item {
+    width: 33rem;
+    height: 20rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
+
+/* форма добавления группы */
   .form-new {
     background-color: white;
-    height: 80%;
+    height: 100%;
     padding-left: 2rem;
     padding-bottom: 2rem;
     padding-right: 2rem;
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: space-around; */
   }
 
   .form-new__top {
@@ -466,18 +488,10 @@
   }
 
 /* формы с сервера */
-  .about-me__editor-edit-group-list {
-    min-height: 100%;
-  }
-
-  .about-me__editor-edit-group-item {
-    height: 100%;
-  }
-
   .form-edit {
     padding: 0 2rem;
     background-color: white;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -502,6 +516,14 @@
       padding-bottom: 1.5rem;
     }
   }
+  .about-me__editor-edit-group-list {
+    min-height: 100%;
+  }
+
+  .about-me__editor-edit-group-item {
+    height: 100%;
+  }
+
 
   .form-edit-skill {
     display: flex;
@@ -517,7 +539,7 @@
   .form-edit-skill__percent {
     border: none;
     position: relative;
-    width: 7%;
+    width: 10%;
 
     &:before {
       position: absolute;
@@ -631,7 +653,7 @@
   height: 15rem;
   border: 1px dotted rgb(41.2%, 41.2%, 41.2%);
   background-color: #c0c0c0;
-  
+  margin-right: 3rem;
 }
 
 .projects__add-pic-label {
@@ -648,6 +670,7 @@
   height: 5rem;
   background-image: linear-gradient(to top, #d0731b, #dc9322);
   font-size: 18px;
+  color: white;
   cursor: pointer;
   border: none;
   border-radius: 100px;
@@ -657,9 +680,35 @@
 }
 
 /* блочок с описанием работы */
+.projects__add-desc {
+  width: 50%;
+}
+
 .projects__add-desc-form {
   display: flex;
   flex-direction: column;
+}
+
+.projects__add-desc-form-row {
+  margin-bottom: 2rem;
+  width: 80%;
+}
+
+.projects__add-desc-input {
+  border-bottom: 1px solid grey;
+  width: 100%;
+  height: 2rem;
+}
+
+.projects__add-desc-textarea {
+  /* border-bottom: 1px solid grey; */
+  width: 100%;
+  height: 6rem;
+}
+
+.projects__add-desc-reset {
+  color: blue;
+  margin-right: 4rem;
 }
 
 </style>
