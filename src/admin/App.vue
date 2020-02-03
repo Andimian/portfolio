@@ -135,10 +135,57 @@
               .preview__desc
                 .preview__desc-pic-wrap
                   img(src='./assets/images/burgers.jpg').preview__desc-pic
-
-          
-
-
+                .preview__desc-rows-wrap
+                  .preview__desc-name название работы  
+                  .preview__desc-text Описание
+                  .preview__desc-link-wrap
+                    a.preview__desc-link Ссылка
+                  .preview__desc-icons
+                    .edit Править
+                    .delete Удалить     
+        .reviews
+          .container.container--reviews
+            .projects__add
+              .projects__title Добавление работы
+              form.projects__add-pic
+                label.projects__add-pic-label перетащите либо загрузите изображения
+                  input.projects__add-pic-submit(type="submit" value="загрузить")
+              .projects__add-desc
+                form.projects__add-desc-form
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Название
+                      input(type='text').projects__add-desc-input
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Ссылка
+                      input(type='text').projects__add-desc-input
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Описание
+                      textarea.projects__add-desc-textarea
+                  .projects__add-desc-form-row
+                    label.projects__add-desc-form-block
+                      .projects__add-desc-form-title Добавление тега
+                      input(type='text').projects__add-desc-input
+                  .projects__add-desc-btns
+                    input(type="reset" value="Отменa").projects__add-desc-reset
+                    input(type="submit" value="Загрузить").projects__add-pic-submit
+            form.preview
+              .preview-btn-wrap
+                .preview-btn-icon           
+                button(type='button' value='добавить работу').preview__btn добавить работу
+              .preview__desc
+                .preview__desc-pic-wrap
+                  img(src='./assets/images/burgers.jpg').preview__desc-pic
+                .preview__desc-rows-wrap
+                  .preview__desc-name название работы  
+                  .preview__desc-text Описание
+                  .preview__desc-link-wrap
+                    a.preview__desc-link Ссылка
+                  .preview__desc-icons
+                    .edit Править
+                    .delete Удалить    
 
 
 
@@ -157,6 +204,10 @@
   @import "../styles/layout/base.pcss";
 
 /* ==========================================Шапка========================*/
+  .wrapper {
+    background-color: #cbccd4;
+  }
+
   .header {
     background-color: #5b6bb2;
     height: 8vh;
@@ -634,6 +685,7 @@
 .projects {
   background-color: #cbccd4;
   min-height: 50vh;
+  margin-bottom: 3rem;
 }
 
 .projects__title {
@@ -652,6 +704,7 @@
   background-color: white;
   padding: 1rem;
   margin-bottom: 3rem;
+  height: 100vh;
 }
 
 .projects__add-pic {
@@ -722,12 +775,11 @@
 
 .preview {
   display: flex;
-
 }
 
 .preview-btn-wrap {
-  width: 30rem;
-  height: 38rem;
+  width: 20rem;
+  height: 28rem;
   color: white;
   cursor: pointer;
   background-image: linear-gradient(to top, #2d0a6d, #12098b);
@@ -773,9 +825,9 @@
 }
 
 .preview__desc {
-  width: 30rem;
-  height: 38rem;
-  color: white;
+  width: 20rem;
+  height: 28rem;
+  color: grey;
   background-color: #fff;
 }
 
@@ -788,7 +840,65 @@
   }
 }
 
+.preview__desc-rows-wrap {
+  padding-left: 2rem;
+  padding-top: 2rem;
+}
 
+.preview__desc-name {
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.preview__desc-text {
+  color: grey;
+  margin-bottom: 1rem;
+}
+
+.preview__desc-link-wrap {
+  color: blue;
+  margin-bottom: 3rem;
+}
+
+.preview__desc-icons {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit {
+  position: relative;
+  &:after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    left: 150%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: svg-load("pencil.svg", fill=blue, width=100%, height=100%);
+  }
+}
+
+.delete {
+  position: relative;
+  &:after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    position: absolute;
+    left: 150%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: svg-load("cross.svg", fill=red, width=100%, height=100%);
+  }
+}
+
+/* ============================отзывы========================== */
+.reviews {
+  background-color: #cbccd4;
+  min-height: 50vh;
+}
 
 
 
