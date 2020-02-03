@@ -143,50 +143,43 @@
                   .preview__desc-icons
                     .edit Править
                     .delete Удалить     
+        //- ОТЗЫВЫ===========================================================================================
         .reviews
           .container.container--reviews
-            .projects__add
-              .projects__title Добавление работы
-              form.projects__add-pic
-                label.projects__add-pic-label перетащите либо загрузите изображения
-                  input.projects__add-pic-submit(type="submit" value="загрузить")
-              .projects__add-desc
-                form.projects__add-desc-form
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Название
-                      input(type='text').projects__add-desc-input
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Ссылка
-                      input(type='text').projects__add-desc-input
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Описание
-                      textarea.projects__add-desc-textarea
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Добавление тега
-                      input(type='text').projects__add-desc-input
-                  .projects__add-desc-btns
-                    input(type="reset" value="Отменa").projects__add-desc-reset
-                    input(type="submit" value="Загрузить").projects__add-pic-submit
-            form.preview
-              .preview-btn-wrap
-                .preview-btn-icon           
-                button(type='button' value='добавить работу').preview__btn добавить работу
-              .preview__desc
-                .preview__desc-pic-wrap
-                  img(src='./assets/images/burgers.jpg').preview__desc-pic
-                .preview__desc-rows-wrap
-                  .preview__desc-name название работы  
-                  .preview__desc-text Описание
-                  .preview__desc-link-wrap
-                    a.preview__desc-link Ссылка
-                  .preview__desc-icons
-                    .edit Править
-                    .delete Удалить    
-
+            .create-review
+              h3.create-review__title Добавить отзыв
+              form.create-review__form-block
+                .create-review__form-avatar
+                  .create-review__form-pic-wrap
+                  .create-review__form-pic-title добавить фото
+                .create-review__form-info
+                  label.create-review__form-info-name
+                    .create-review__form-info-name-title Имя автора
+                    input(type='text').create-review__form-info-input
+                  label.create-review__form-info-titul
+                    .create-review__form-info-titul-title Титул автора
+                    input(type='text').create-review__form-info-input
+                  label.create-review__form-info-name
+                    .create-review__form-info-name-title Отзыв
+                    textarea(type='text').create-review__form-info-textarea
+                  .create-review__form-btns
+                    input(type='reset' value='Отмена').create-review__form-info-reset
+                    input(type='submit' value='Загрузить').create-review__form-info-submit
+            .confirm-review
+              .load-btn
+                .load-btn-icon
+                .load-btn-title Добавить работу
+              .confirm-review__preview
+                .confirm-review__preview-top
+                  .confirm-review__preview-pic-wrap
+                    img(src='./assets/images/user.jpg').confirm-review__preview-pic
+                  .confirm-review__preview-wrap
+                    .confirm-review__preview-name имя фамилия
+                    .confirm-review__preview-titul программист
+                .confirm-review__preview-rev Пока что у нас получилось так, что во всех элементах списка будет один и тот же текст — это не очень-то интересно.
+                .confirm-review__preview-btns
+                  .edit Править
+                  .delete Удалить  
 
 
 
@@ -894,13 +887,208 @@
   }
 }
 
-/* ============================отзывы========================== */
+/* ============================отзывы====================================== */
 .reviews {
   background-color: #cbccd4;
-  min-height: 50vh;
+}
+
+.create-review {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 3rem;
+}
+
+.create-review__title {
+  height: 5rem;
+  width: 100%;
+  border-bottom: 1px solid grey;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.create-review__form-block {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+}
+
+.create-review__form-avatar {
+  margin-right: 4rem;
+}
+
+.create-review__form-pic-wrap {
+  width: 18rem;
+  height: 18rem;
+  background-color: #dde4ec;
+  border-radius: 300px;
+  position: relative;
+  margin-bottom: 1rem;
+  &:before {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      content: '';
+      width: 10rem;
+      height: 10rem;
+      transform: translate(-50%, -50%);
+      /* background-color: aqua; */
+      background: svg-load("Avatar.svg", fill=white, width=100%, height=100%);
+  }
+}
+
+.create-review__form-pic-title {
+  color: blue;
+  text-align: center;
+}
+
+.create-review__form-info {
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+.create-review__form-info-name {
+  margin-right: 4rem;
+  height: -webkit-fill-available;
+}
+
+.create-review__form-info-name-title {
+  /* padding: 2rem; */
+}
+
+.create-review__form-info-titul {
+  margin-right: 4rem;
+  margin-bottom: 4rem;
 }
 
 
+.create-review__form-info-input {
+  border-bottom: 1px solid #dde4ec;
+  height: 2rem;
+  width: 15rem;
+}
 
+.create-review__form-info-textarea {
+  width: 40rem;
+  height: 10rem;
+}
+
+.create-review__form-info-reset {
+  color: #12098b;
+  margin-right: 5rem;
+}
+
+.create-review__form-info-submit {
+  width: 15rem;
+  height: 5rem;
+  background-image: linear-gradient(to top, #d0731b, #dc9322);
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  &:hover {
+    background-image: linear-gradient(to top, #ff8e24, #bc6a1d);
+  }
+}
+
+.confirm-review {
+  display: flex;
+}
+
+.load-btn {
+  width: 20rem;
+  height: 28rem;
+  color: white;
+  cursor: pointer;
+  background-image: linear-gradient(to top, #2d0a6d, #12098b);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+}
+
+.load-btn-icon {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  margin-bottom: 3rem;
+  &:after {
+    width: 3rem;
+    height: 3rem;
+    left: 50%;
+    top: 50%;
+    /* border-radius: 100px; */
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+    content: '';
+    background: svg-load("remove.svg", fill=white);
+  }
+  &:before {
+    width: 15rem;
+    height: 15rem;
+    left: 50%;
+    top: 50%;
+    border-radius: 200px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border: 1px solid white;
+    content: '';
+  }
+}
+
+.confirm-review__preview {
+  width: 20rem;
+  height: 28rem;
+  color: grey;
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.confirm-review__preview-top {
+  display: flex;
+}
+
+.confirm-review__preview-pic-wrap {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 1rem;
+}
+
+.confirm-review__preview-pic {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 200px;
+}
+
+.confirm-review__preview-name {
+  color: black;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.confirm-review__preview-titul {
+  color: #dde4ec;
+  margin-bottom: 2rem;
+}
+
+.confirm-review__preview-rev {
+  margin-bottom: 6rem;
+}
+
+.confirm-review__preview-btns {
+  display: flex;
+
+  .edit {
+    margin-right: 5rem;
+  }
+}
 </style>
 
