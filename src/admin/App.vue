@@ -153,13 +153,14 @@
                   .create-review__form-pic-wrap
                   .create-review__form-pic-title добавить фото
                 .create-review__form-info
-                  label.create-review__form-info-name
-                    .create-review__form-info-name-title Имя автора
-                    input(type='text').create-review__form-info-input
-                  label.create-review__form-info-titul
-                    .create-review__form-info-titul-title Титул автора
-                    input(type='text').create-review__form-info-input
-                  label.create-review__form-info-name
+                  .create-review__form-info-row
+                    label.create-review__form-info-name
+                      .create-review__form-info-name-title Имя автора
+                      input(type='text').create-review__form-info-input
+                    label.create-review__form-info-titul
+                      .create-review__form-info-titul-title Титул автора
+                      input(type='text').create-review__form-info-input
+                  label.create-review__form-info-rev
                     .create-review__form-info-name-title Отзыв
                     textarea(type='text').create-review__form-info-textarea
                   .create-review__form-btns
@@ -950,11 +951,17 @@
   display: flex;
   flex-wrap: wrap;
   width: 60%;
+  flex-direction: column;
+}
+
+.create-review__form-info-row {
+  display: flex;
+  height: 8rem;
 }
 
 .create-review__form-info-name {
   margin-right: 4rem;
-  height: -webkit-fill-available;
+  height: 3rem;;
 }
 
 .create-review__form-info-name-title {
@@ -964,17 +971,22 @@
 .create-review__form-info-titul {
   margin-right: 4rem;
   margin-bottom: 4rem;
+  height: 3rem;
 }
 
 
 .create-review__form-info-input {
   border-bottom: 1px solid #dde4ec;
   height: 2rem;
-  width: 15rem;
+  width: 100%;
+}
+
+.create-review__form-info-rev {
+  margin-bottom: 3rem;
 }
 
 .create-review__form-info-textarea {
-  width: 40rem;
+  width: 100%;
   height: 10rem;
 }
 
