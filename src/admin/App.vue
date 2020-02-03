@@ -101,9 +101,9 @@
                     input(type="number" name="name" placeholder='0').form-new__bottom-percent
                     .form-new__bottom-icon
         .projects
-          .container
-            .projects__title Добавление работы
+          .container.container--projects
             .projects__add
+              .projects__title Добавление работы
               form.projects__add-pic
                 label.projects__add-pic-label перетащите либо загрузите изображения
                   input.projects__add-pic-submit(type="submit" value="загрузить")
@@ -128,12 +128,13 @@
                   .projects__add-desc-btns
                     input(type="reset" value="Отменa").projects__add-desc-reset
                     input(type="submit" value="Загрузить").projects__add-pic-submit
-                                 //- класс у кнопки с соседней кнопочки
-                    
-                    
-                    
-              .projects__add-btn
-              .projects__add-preview
+            form.preview
+              .preview-btn-wrap
+                .preview-btn-icon           
+                button(type='button' value='добавить работу').preview__btn добавить работу
+              .preview__desc
+                .preview__desc-pic-wrap
+                  img(src='./assets/images/burgers.jpg').preview__desc-pic
 
           
 
@@ -631,6 +632,7 @@
 
   /* страница добавление работы============================================================================ */
 .projects {
+  background-color: #cbccd4;
   min-height: 50vh;
 }
 
@@ -646,6 +648,10 @@
 .projects__add {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 3rem;
 }
 
 .projects__add-pic {
@@ -682,6 +688,7 @@
 /* блочок с описанием работы */
 .projects__add-desc {
   width: 50%;
+  margin-bottom: 2rem;
 }
 
 .projects__add-desc-form {
@@ -710,6 +717,80 @@
   color: blue;
   margin-right: 4rem;
 }
+
+/* кнопка загрузки работы */
+
+.preview {
+  display: flex;
+
+}
+
+.preview-btn-wrap {
+  width: 30rem;
+  height: 38rem;
+  color: white;
+  cursor: pointer;
+  background-image: linear-gradient(to top, #2d0a6d, #12098b);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3rem;
+}
+
+.preview__btn {
+  color: white;
+}
+
+.preview-btn-icon {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  margin-bottom: 3rem;
+  &:after {
+    width: 3rem;
+    height: 3rem;
+    left: 50%;
+    top: 50%;
+    /* border-radius: 100px; */
+    transform: translate(-50%, -50%) rotate(45deg);
+    position: absolute;
+    content: '';
+    background: svg-load("remove.svg", fill=white);
+  }
+  &:before {
+    width: 15rem;
+    height: 15rem;
+    left: 50%;
+    top: 50%;
+    border-radius: 200px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border: 1px solid white;
+    content: '';
+  }
+}
+
+.preview__desc {
+  width: 30rem;
+  height: 38rem;
+  color: white;
+  background-color: #fff;
+}
+
+.preview__desc-pic-wrap {
+  width: 100%;
+
+  .preview__desc-pic {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+
 
 </style>
 
