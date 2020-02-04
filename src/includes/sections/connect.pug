@@ -1,25 +1,44 @@
 section.connect#connect
   .container.container--connect
-    .connect__title Связаться со мной
-    form(action="").form
+    h2.connect__title Связаться со мной
+    form(@submit.prevent='submitForm').form
       .form__blocks
-        .form__row
+        .form__row(:class='{error: !nameValid}')
           label.form-label
             .form__label-title Введите ваше имя
             .form__input-wrap
-              input(type="text" name="name" placeholder='Василиса Прекрасная' required).form__input
+              input.form__input.from__input--name(
+                type="text"
+                name="name" 
+                placeholder='Василиса Прекрасная' 
+                @input='validateName'
+                onFocus="this.placeholder='' "
+                )
               +icon('Avatar', 'form__input-pic')
-        .form__row
+              .form__input-tooltip {{nameError}}
+        .form__row(:class='{error: !emailValid}')
           label.form-label
             .form__label-title Ведите ваш email
             .form__input-wrap
-              input(type="email" name="name" placeholder='gvtx@mail.ru' required).form__input
-              +icon('envelope', 'form__input-pic')  
-        .form__mes
+              input.form__input.form__input--email(
+                type="email" 
+                name="email" 
+                placeholder='gvtx@mail.ru'
+                @input='validateEmail'
+                onFocus="this.placeholder='' "
+                )
+              +icon('envelope', 'form__input-pic')
+              .form__input-tooltip {{emailError}}
+        .form__mes(:class='{error: !messageValid}')
           label.form-label
             .form__label-title Сообщение к письму
             .form__input-wrap
-              textarea(name="comment" placeholder='Здравствуйте, мне посоветовали вас друзья, нужен проект интернет-магазина. Я хотела бы договориться с вами о встрече.' required).form__textarea
+              textarea.form__textarea(
+                name="message" placeholder='Здравствуйте, мне посоветовали вас друзья, нужен проект интернет-магазина. Я хотела бы договориться с вами о встрече.'
+                @input='validateMessage'
+                onFocus="this.placeholder='' " 
+                )
               +icon('message', 'form__input-pic--textarea')
+              .form__textarea-tooltip {{messageError}}
       .form__buttons
-        input.submit(type="submit" value="отправить")
+        button.submit(@click.prevent='submitForm')
