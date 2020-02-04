@@ -41,4 +41,8 @@ section.connect#connect
               +icon('message', 'form__input-pic--textarea')
               .form__textarea-tooltip {{messageError}}
       .form__buttons
-        button.submit(@click.prevent='submitForm')
+        button.submit(@click.prevent='submitForm') Отправить
+  .form-overlay(:class="{disabled: overlayHidden}" @click='hideOverlay')
+    .form-overlay__content
+      .form-overlay__message {{resualtMessage}}
+      button.form-overlay__close(@click='hideOverlay') Закрыть

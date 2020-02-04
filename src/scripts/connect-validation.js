@@ -55,7 +55,7 @@ new Vue({
             return this.messageValid;
         },
         submitForm() {
-            console.log('asdf');
+            console.log('запустился метод submit');
             
             var nameValid = this.validateName(),
                 emailValid = this.validateEmail(),
@@ -71,6 +71,8 @@ new Vue({
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(userData)
                 }).then((response) => {
+                    console.log(response);
+                    
                     this.resualtMessage = 'Сообщение отправлено!';
                     this.overlayHidden = false;
                     setImmeout(this.hideOverlay, 5000);
