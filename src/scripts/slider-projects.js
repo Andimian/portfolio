@@ -89,7 +89,6 @@ new Vue({
         currentIndex: 0,
         termnext: false,
         termprev: true,
-        title: 'hello'
       }
     },
     computed: {

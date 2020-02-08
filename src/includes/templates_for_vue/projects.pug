@@ -7,7 +7,6 @@ script(type="x/template")#projects-template-vue
       :works="works"
       :currentWork="currentWork"
       :currentIndex="currentIndex"
-      :title="title"
       :termnext='termnext'
       :termprev='termprev'
       @slide="handleSlide"
@@ -20,7 +19,6 @@ script(type="text/x-template")#slider-display
       thumbs(
         :works="works"
         :currentWork="currentWork"
-        :title="title"
         :termnext='termnext'
         :termprev='termprev'
         
@@ -43,7 +41,6 @@ script(type="text/x-template")#slider-thumbs
 
     btns(
       @slide="direction => $emit('slide', direction)"
-      :title="title"
       :termnext='termnext'
       :termprev='termprev'
     )
