@@ -8,10 +8,10 @@ new Vue({
 		Flickity
 	},
 
-  data() {
+    data() {
     return {
 			// desktop: window.matchMedia("(min-width: 480px)").matches,
-      flickityOptions: {
+        flickityOptions: {
         initialIndex: 0,
         prevNextButtons: false,
 				pageDots: false,
@@ -22,11 +22,10 @@ new Vue({
 				// contain: true,
 				// groupCells: 2
 				// autoPlay: 6000,
-      }
+        }
     };
-  },
-  
-  methods: {
+    },
+    methods: {
     next() {
 			this.$refs.flickity.next();
 			this.checkArrows();

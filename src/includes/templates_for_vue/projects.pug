@@ -1,11 +1,15 @@
 script(type="x/template")#projects-template-vue
   section.projects#projects
     .container.container--projects
-      .projects__title Мои работы
+      .projects__title
+
       display(
-      :works="works",
-      :currentWork="currentWork",
+      :works="works"
+      :currentWork="currentWork"
       :currentIndex="currentIndex"
+      :title="title"
+      :termnext='termnext'
+      :termprev='termprev'
       @slide="handleSlide"
     )
   
@@ -16,6 +20,10 @@ script(type="text/x-template")#slider-display
       thumbs(
         :works="works"
         :currentWork="currentWork"
+        :title="title"
+        :termnext='termnext'
+        :termprev='termprev'
+        
         @slide="direction => $emit('slide', direction)" 
       )
     number(
@@ -35,16 +43,22 @@ script(type="text/x-template")#slider-thumbs
 
     btns(
       @slide="direction => $emit('slide', direction)"
+      :title="title"
+      :termnext='termnext'
+      :termprev='termprev'
     )
 
 script(type="text/x-template")#slider-btns             
   .slider__arrows
 
     //- эмиты это механизм для того чтобы при изменениии во внутреннем компоненте, можно было отреагировать во внешнем, 1-ый аргумент имя события, 2-ой данные которые с этим событием передаем
-    a(href="#" @click.prevent="$emit('slide', 'next')").slider__arrow-next
+    //- button(href="#" :disabled='term' @click.prevent="$emit('slide', 'next')").slider__arrow-next
+    //- button(href="#" :disabled='term').slider__arrow-next#test
+    //-   +icon('Short Arrow', 'slider__arrow-next-svg')
+    button#test(href="#" :disabled='termnext' @click.prevent="$emit('slide', 'next')").slider__arrow-next
       +icon('Short Arrow', 'slider__arrow-next-svg')
 
-    a(href="#" @click.prevent="$emit('slide', 'prev')").slider__arrow-prev
+    button(href="#" :disabled='termprev' @click.prevent="$emit('slide', 'prev')").slider__arrow-prev
       +icon('Short Arrow', 'slider__arrow-prev-svg')
 
 

@@ -9,3 +9,4 @@ import "./scripts/slider-reviews";
 import "./scripts/slider-projects";
 import "./scripts/popup";
 import "./scripts/connect-validation";
+import "./scripts/test";

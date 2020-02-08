@@ -19,7 +19,7 @@
             .header__exit
               a(href='#').header__exit-link Выйти
         +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
-        .about-me
+        .about-me#about-me
           .container.container--about-me
             .about-me__title-wrap 
               h1.about-me__title-about Блок "Обо мне"
@@ -100,7 +100,7 @@
                     input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
                     input(type="number" name="name" placeholder='0').form-new__bottom-percent
                     .form-new__bottom-icon
-        .projects
+        .projects#projects
           .container.container--projects
             .projects__add
               .projects__title Добавление работы
@@ -144,7 +144,7 @@
                     .edit Править
                     .delete Удалить     
         //- ОТЗЫВЫ===========================================================================================
-        .reviews
+        .reviews#reviews
           .container.container--reviews
             .create-review
               h3.create-review__title Добавить отзыв
@@ -891,6 +891,7 @@
 /* ============================отзывы====================================== */
 .reviews {
   background-color: #cbccd4;
+  margin-bottom: 4rem;
 }
 
 .create-review {

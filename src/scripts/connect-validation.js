@@ -81,6 +81,7 @@ new Vue({
         },
         hideOverlay() {
             this.overlayHidden = true;
+            
         }
     }
 });

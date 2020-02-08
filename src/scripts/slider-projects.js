@@ -1,7 +1,13 @@
 import Vue from "vue";
 
 const btns = {
-  template: "#slider-btns"
+  template: "#slider-btns",
+  props: {
+    works: Array,
+    currentWork: Object,
+    termnext: Boolean,
+    termprev: Boolean,
+  }  
 };
 
 const thumbs = {
@@ -11,7 +17,9 @@ const thumbs = {
   },
   props: {
     works: Array,
-    currentWork: Object
+    currentWork: Object,
+    termnext: Boolean,
+    termprev: Boolean,
   }
 };
 
@@ -55,7 +63,9 @@ const display = {
   props: {
     works: Array,
     currentWork: Object,
-    currentIndex: Number
+    currentIndex: Number,
+    termnext: Boolean,
+    termprev: Boolean,
   },
   computed: {
     reversedWorks() {
@@ -73,17 +83,19 @@ new Vue({
     components: {
       display
     },
-    // чтобы использовать json делаем дату
     data() {
       return {
         works: [],
-        currentIndex: 0
-      };
+        currentIndex: 0,
+        termnext: false,
+        termprev: true,
+        title: 'hello'
+      }
     },
     computed: {
       currentWork() {
         return this.works[this.currentIndex];
-      }
+      },
     },
     watch: {
       currentIndex(value) {
@@ -91,10 +103,30 @@ new Vue({
       }
     },
     methods: {
+      changeNext: function() {
+        this.termnext = !this.termnext;
+        return this.termnext;
+      },
+      changePrev: function() {
+        this.termprev = !this.termprev;
+        return this.termprev;
+      },
       makeInfiniteLoopForCurIndex(value) {
         const worksAmount = this.works.length - 1;
-        if (value > worksAmount) this.currentIndex = 0;
-        if (value < 0) this.currentIndex = worksAmount;
+        if (value === worksAmount) {
+          // console.log('asdf');
+          // this.termnext = !this.termnext;
+          this.changeNext();
+          console.log('dada');
+          
+          this.changePrev();
+        }else if(value === 0){
+          this.changeNext();
+          this.changePrev();
+        }else{
+          this.termnext = false;
+          this.termprev = false;
+        }
       },
 
       // в created в данном случае мы не можем использовать просто this.works = data; потому что 
@@ -103,7 +135,6 @@ new Vue({
         return data.map(item => {
           const requiredPic = require(`../images/content/${item.photo}`);
           item.photo = requiredPic;
-  
           return item;
         });
       },
@@ -111,12 +142,12 @@ new Vue({
         switch (direction) {
           case "next":
             this.currentIndex++;
+            this.term = true;
             break;
           case "prev":
             this.currentIndex--;
             break;
         }
-        // console.log('hello');
         
       }
     },
