@@ -1,186 +1,172 @@
 <template lang="pug">
   include ../mixins.pug
-
-  <!DOCTYPE html>
-  html(lang="ru")
-    include ../includes/head.pug
-    block title
-      title Твоя админочка
-      
-    body
-      .wrapper
-        header.header
-          .container.container--header
-            .header__user
-              .header__user-pic-wrap
-                img(src='./assets/images/user.jpg').header__user-pic
-              .header__user-name Антон Соколов
-            .header__title Панель администрирования
-            .header__exit
-              a(href='#').header__exit-link Выйти
-        +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
-        .about-me#about-me
-          .container.container--about-me
-            .about-me__title-wrap 
-              h1.about-me__title-about Блок "Обо мне"
-              button.about-me__title-ad-group Добавить группу
-            ul.about-me__editor-list
-              //- дефолтная формочка
-              li.about-me__editor-item
-                form.form-new
-                  .form-new__top
-                    input(type="text" name="name" placeholder='название новой группы' required).form-new__top-input
-                    .form-new__top-icons
-                      .form-new__top-icon-default
-                      .form-new__top-icons-edit
-                  .form-new__bottom
-                    input(type="text" name="name" required).form-new__bottom-scill
-                    input(type="number" name="number" placeholder='0').form-new__bottom-percent
-                    .form-new__bottom-icon
-                //- формы с сервера
-              li.about-me__editor-item      
-                form.form-edit
-                  .form-new__top Frontend
-                    .form-new__top-icons
-                      .form-new__top-icon-default
-                      .form-new__top-icons-edit
-                  .form-edit-skill
-                    input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
-                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                    .form-edit-skill__percent-pic-wrap %
-                    .form-edit-skill__btns
-                      .form-edit-skill__btns-default
-                      .form-edit-skill__btns-edit
-                  .form-edit-skill
-                    input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
-                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                    .form-edit-skill__percent-pic-wrap %
-                    .form-edit-skill__btns
-                      .form-edit-skill__btns-default
-                      .form-edit-skill__btns-edit
-                  .form-edit-skill
-                    input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
-                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                    .form-edit-skill__percent-pic-wrap %
-                    .form-edit-skill__btns
-                      .form-edit-skill__btns-default
-                      .form-edit-skill__btns-edit
-                  .form-new__bottom
-                    input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
-                    input(type="number" name="name" placeholder='0').form-new__bottom-percent
-                    .form-new__bottom-icon
-              li.about-me__editor-item
-                form.form-edit
-                  .form-new__top Frontend
-                    .form-new__top-icons
-                      .form-new__top-icon-default
-                      .form-new__top-icons-edit
-                  .form-edit-skill
-                    input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
-                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                    .form-edit-skill__percent-pic-wrap %
-                    .form-edit-skill__btns
-                      .form-edit-skill__btns-default
-                      .form-edit-skill__btns-edit
-                  .form-edit-skill
-                    input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
-                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                    .form-edit-skill__percent-pic-wrap %
-                    .form-edit-skill__btns
-                      .form-edit-skill__btns-default
-                      .form-edit-skill__btns-edit
-                  .form-edit-skill
-                    input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
-                    input(type="number" name="scill" placeholder='50').form-edit-skill__percent
-                    .form-edit-skill__percent-pic-wrap %
-                    .form-edit-skill__btns
-                      .form-edit-skill__btns-default
-                      .form-edit-skill__btns-edit
-                  .form-new__bottom
-                    input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
-                    input(type="number" name="name" placeholder='0').form-new__bottom-percent
-                    .form-new__bottom-icon
-        .projects#projects
-          .container.container--projects
-            .projects__add
-              .projects__title Добавление работы
-              form.projects__add-pic
-                label.projects__add-pic-label перетащите либо загрузите изображения
-                  input.projects__add-pic-submit(type="submit" value="загрузить")
-              .projects__add-desc
-                form.projects__add-desc-form
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Название
-                      input(type='text').projects__add-desc-input
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Ссылка
-                      input(type='text').projects__add-desc-input
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Описание
-                      textarea.projects__add-desc-textarea
-                  .projects__add-desc-form-row
-                    label.projects__add-desc-form-block
-                      .projects__add-desc-form-title Добавление тега
-                      input(type='text').projects__add-desc-input
-                  .projects__add-desc-btns
-                    input(type="reset" value="Отменa").projects__add-desc-reset
-                    input(type="submit" value="Загрузить").projects__add-pic-submit
-            form.preview
-              .preview-btn-wrap
-                .preview-btn-icon           
-                button(type='button' value='добавить работу').preview__btn добавить работу
-              .preview__desc
-                .preview__desc-pic-wrap
-                  img(src='./assets/images/burgers.jpg').preview__desc-pic
-                .preview__desc-rows-wrap
-                  .preview__desc-name название работы  
-                  .preview__desc-text Описание
-                  .preview__desc-link-wrap
-                    a.preview__desc-link Ссылка
-                  .preview__desc-icons
-                    .edit Править
-                    .delete Удалить     
-        //- ОТЗЫВЫ===========================================================================================
-        .reviews#reviews
-          .container.container--reviews
-            .create-review
-              h3.create-review__title Добавить отзыв
-              form.create-review__form-block
-                .create-review__form-avatar
-                  .create-review__form-pic-wrap
-                  .create-review__form-pic-title добавить фото
-                .create-review__form-info
-                  .create-review__form-info-row
-                    label.create-review__form-info-name
-                      .create-review__form-info-name-title Имя автора
-                      input(type='text').create-review__form-info-input
-                    label.create-review__form-info-titul
-                      .create-review__form-info-titul-title Титул автора
-                      input(type='text').create-review__form-info-input
-                  label.create-review__form-info-rev
-                    .create-review__form-info-name-title Отзыв
-                    textarea(type='text').create-review__form-info-textarea
-                  .create-review__form-btns
-                    input(type='reset' value='Отмена').create-review__form-info-reset
-                    input(type='submit' value='Загрузить').create-review__form-info-submit
-            .confirm-review
-              .load-btn
-                .load-btn-icon
-                .load-btn-title Добавить работу
-              .confirm-review__preview
-                .confirm-review__preview-top
-                  .confirm-review__preview-pic-wrap
-                    img(src='./assets/images/user.jpg').confirm-review__preview-pic
-                  .confirm-review__preview-wrap
-                    .confirm-review__preview-name имя фамилия
-                    .confirm-review__preview-titul программист
-                .confirm-review__preview-rev Пока что у нас получилось так, что во всех элементах списка будет один и тот же текст — это не очень-то интересно.
-                .confirm-review__preview-btns
-                  .edit Править
-                  .delete Удалить  
+  .app-wrap
+    .background-img
+    app-header
+    +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
+    .about-me#about-me
+      .container.container--about-me
+        .about-me__title-wrap 
+          h1.about-me__title-about Блок "Обо мне"
+          button.about-me__title-ad-group Добавить группу
+        ul.about-me__editor-list
+          //- дефолтная формочка
+          li.about-me__editor-item
+            form.form-new
+              .form-new__top
+                input(type="text" name="name" placeholder='название новой группы' required).form-new__top-input
+                .form-new__top-icons
+                  .form-new__top-icon-default
+                  .form-new__top-icons-edit
+              .form-new__bottom
+                input(type="text" name="name" required).form-new__bottom-scill
+                input(type="number" name="number" placeholder='0').form-new__bottom-percent
+                .form-new__bottom-icon
+            //- формы с сервера
+          li.about-me__editor-item      
+            form.form-edit
+              .form-new__top Frontend
+                .form-new__top-icons
+                  .form-new__top-icon-default
+                  .form-new__top-icons-edit
+              .form-edit-skill
+                input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
+                input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                .form-edit-skill__percent-pic-wrap %
+                .form-edit-skill__btns
+                  .form-edit-skill__btns-default
+                  .form-edit-skill__btns-edit
+              .form-edit-skill
+                input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
+                input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                .form-edit-skill__percent-pic-wrap %
+                .form-edit-skill__btns
+                  .form-edit-skill__btns-default
+                  .form-edit-skill__btns-edit
+              .form-edit-skill
+                input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
+                input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                .form-edit-skill__percent-pic-wrap %
+                .form-edit-skill__btns
+                  .form-edit-skill__btns-default
+                  .form-edit-skill__btns-edit
+              .form-new__bottom
+                input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
+                input(type="number" name="name" placeholder='0').form-new__bottom-percent
+                .form-new__bottom-icon
+          li.about-me__editor-item
+            form.form-edit
+              .form-new__top Frontend
+                .form-new__top-icons
+                  .form-new__top-icon-default
+                  .form-new__top-icons-edit
+              .form-edit-skill
+                input(type="text" name="scill" placeholder='HTML').form-edit-skill__name
+                input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                .form-edit-skill__percent-pic-wrap %
+                .form-edit-skill__btns
+                  .form-edit-skill__btns-default
+                  .form-edit-skill__btns-edit
+              .form-edit-skill
+                input(type="text" name="scill" placeholder='CSS').form-edit-skill__name
+                input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                .form-edit-skill__percent-pic-wrap %
+                .form-edit-skill__btns
+                  .form-edit-skill__btns-default
+                  .form-edit-skill__btns-edit
+              .form-edit-skill
+                input(type="text" name="scill" placeholder='javascript').form-edit-skill__name
+                input(type="number" name="scill" placeholder='50').form-edit-skill__percent
+                .form-edit-skill__percent-pic-wrap %
+                .form-edit-skill__btns
+                  .form-edit-skill__btns-default
+                  .form-edit-skill__btns-edit
+              .form-new__bottom
+                input(type="text" name="name" placeholder='новый навык' required).form-new__bottom-scill
+                input(type="number" name="name" placeholder='0').form-new__bottom-percent
+                .form-new__bottom-icon
+    .projects#projects
+      .container.container--projects
+        .projects__add
+          .projects__title Добавление работы
+          form.projects__add-pic
+            label.projects__add-pic-label перетащите либо загрузите изображения
+              input.projects__add-pic-submit(type="submit" value="загрузить")
+          .projects__add-desc
+            form.projects__add-desc-form
+              .projects__add-desc-form-row
+                label.projects__add-desc-form-block
+                  .projects__add-desc-form-title Название
+                  input(type='text').projects__add-desc-input
+              .projects__add-desc-form-row
+                label.projects__add-desc-form-block
+                  .projects__add-desc-form-title Ссылка
+                  input(type='text').projects__add-desc-input
+              .projects__add-desc-form-row
+                label.projects__add-desc-form-block
+                  .projects__add-desc-form-title Описание
+                  textarea.projects__add-desc-textarea
+              .projects__add-desc-form-row
+                label.projects__add-desc-form-block
+                  .projects__add-desc-form-title Добавление тега
+                  input(type='text').projects__add-desc-input
+              .projects__add-desc-btns
+                input(type="reset" value="Отменa").projects__add-desc-reset
+                input(type="submit" value="Загрузить").projects__add-pic-submit
+        form.preview
+          .preview-btn-wrap
+            .preview-btn-icon           
+            button(type='button' value='добавить работу').preview__btn добавить работу
+          .preview__desc
+            .preview__desc-pic-wrap
+              img(src='./assets/images/burgers.jpg').preview__desc-pic
+            .preview__desc-rows-wrap
+              .preview__desc-name название работы  
+              .preview__desc-text Описание
+              .preview__desc-link-wrap
+                a.preview__desc-link Ссылка
+              .preview__desc-icons
+                .edit Править
+                .delete Удалить     
+      //- ОТЗЫВЫ===========================================================================================
+      .reviews#reviews
+        .container.container--reviews
+          .create-review
+            h3.create-review__title Добавить отзыв
+            form.create-review__form-block
+              .create-review__form-avatar
+                .create-review__form-pic-wrap
+                .create-review__form-pic-title добавить фото
+              .create-review__form-info
+                .create-review__form-info-row
+                  label.create-review__form-info-name
+                    .create-review__form-info-name-title Имя автора
+                    input(type='text').create-review__form-info-input
+                  label.create-review__form-info-titul
+                    .create-review__form-info-titul-title Титул автора
+                    input(type='text').create-review__form-info-input
+                label.create-review__form-info-rev
+                  .create-review__form-info-name-title Отзыв
+                  textarea(type='text').create-review__form-info-textarea
+                .create-review__form-btns
+                  input(type='reset' value='Отмена').create-review__form-info-reset
+                  input(type='submit' value='Загрузить').create-review__form-info-submit
+          .confirm-review
+            .load-btn
+              .load-btn-icon
+              .load-btn-title Добавить работу
+            .confirm-review__preview
+              .confirm-review__preview-top
+                .confirm-review__preview-pic-wrap
+                  img(src='./assets/images/user.jpg').confirm-review__preview-pic
+                .confirm-review__preview-wrap
+                  .confirm-review__preview-name имя фамилия
+                  .confirm-review__preview-titul программист
+              .confirm-review__preview-rev Пока что у нас получилось так, что во всех элементах списка будет один и тот же текст — это не очень-то интересно.
+              .confirm-review__preview-btns
+                .edit Править
+                .delete Удалить  
+    .overlay
 
 
 
@@ -188,6 +174,22 @@
 </template>
 
 <script>
+  export default {
+    components: {
+    appHeader: () => import('./components/app-header.vue')
+    // Tabs: () => import('components/Tabs.vue'),
+  },
+  // data() {
+    //   return {
+      //     showLogin: true
+  //   }
+  // },
+  // methods: {
+  //   closeLoginForm() {
+  //     console.log('this', this);
+  //   }
+  // }
+}
 </script>
 
 <style lang="postcss">
@@ -199,59 +201,30 @@
 
 /* ==========================================Шапка========================*/
   .wrapper {
-    background-color: #cbccd4;
+    /* background-color: #cbccd4; */
   }
 
-  .header {
-    background-color: #5b6bb2;
-    height: 8vh;
-    color: #9aa0b5;
+  .app-wrap {
+    position: relative;
   }
 
-  .container--header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-  }
-/* ============первый блочок ===============*/
-  .header__user {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .header__user-pic-wrap {
-    width: 20%;
-    .header__user-pic {
-        border-radius: 100px;
-        padding: 5%;
-    }
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url('~images/content/Train-Bridge.jpg')no-repeat;
+    background-size: cover;
+    z-index: 2340;
+    opacity: 0.1;
   }
 
-  .header__user-name {
-    color: white;
-  }
-/* ============второй блочок=============== */
-  .header__title {
-    text-align: center;
-    margin: auto;
-  }
-/* ============третий блочок=============== */
-  .header__exit {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 5%;
-  }
-
-  .header__exit-link {
-    &:hover {
-      color: orange;
-    }
-  }
-
-
+  
 /*=========================================навигашка===================== */
   .nav {
+    z-index: 11230;
     height: 8vh;
     color:  #9aa0b5;
   }
@@ -270,6 +243,7 @@
   }
 
   .nav__item {
+    z-index: 11230;
     margin-right: 5%;
     height: 100%;
     padding-top: 2%;
@@ -344,6 +318,7 @@
 /* =======================================Блок Обо мне=================== */
   .about-me {
     background-color: #cbccd4;
+    padding-bottom: 5rem;
   }
 
   .about-me__title-wrap {
@@ -388,15 +363,18 @@
   .about-me__editor-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start
+    /* justify-content: flex-start */
     
   }
 
   .about-me__editor-item {
-    width: 33rem;
+    width: 48%;
     height: 20rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
+    &:nth-child(2) {
+      margin-right: 0;
+    }
   }
 
 /* форма добавления группы */
@@ -430,7 +408,7 @@
 
   .form-new__top-icons {
     position: relative;
-    width: 20%;
+    width: 5%;
     height: 100%;
   }
   
@@ -459,7 +437,7 @@
     /* display: none; */
     &:before {
       position: absolute;
-      left: 20%;
+      left: -20%;
       top: 50%;
       content: '';
       width: 1rem;
@@ -471,7 +449,7 @@
     }
       &:after {
       position: absolute;
-      left: 50%;
+      left: 70%;
       top: 50%;
       content: '';
       width: 0.9rem;
@@ -679,7 +657,12 @@
 .projects {
   background-color: #cbccd4;
   min-height: 50vh;
-  margin-bottom: 3rem;
+  padding-bottom: 5rem;
+}
+
+.container--projects {
+  margin-bottom: 5rem;
+
 }
 
 .projects__title {
