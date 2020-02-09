@@ -1,7 +1,7 @@
 <template lang="pug">
   include ../mixins.pug
   .app-wrap
-    .background-img
+    //- .background-img
     app-header
     +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
     .about-me#about-me
@@ -129,43 +129,43 @@
                 .edit Править
                 .delete Удалить     
       //- ОТЗЫВЫ===========================================================================================
-      .reviews#reviews
-        .container.container--reviews
-          .create-review
-            h3.create-review__title Добавить отзыв
-            form.create-review__form-block
-              .create-review__form-avatar
-                .create-review__form-pic-wrap
-                .create-review__form-pic-title добавить фото
-              .create-review__form-info
-                .create-review__form-info-row
-                  label.create-review__form-info-name
-                    .create-review__form-info-name-title Имя автора
-                    input(type='text').create-review__form-info-input
-                  label.create-review__form-info-titul
-                    .create-review__form-info-titul-title Титул автора
-                    input(type='text').create-review__form-info-input
-                label.create-review__form-info-rev
-                  .create-review__form-info-name-title Отзыв
-                  textarea(type='text').create-review__form-info-textarea
-                .create-review__form-btns
-                  input(type='reset' value='Отмена').create-review__form-info-reset
-                  input(type='submit' value='Загрузить').create-review__form-info-submit
-          .confirm-review
-            .load-btn
-              .load-btn-icon
-              .load-btn-title Добавить работу
-            .confirm-review__preview
-              .confirm-review__preview-top
-                .confirm-review__preview-pic-wrap
-                  img(src='./assets/images/user.jpg').confirm-review__preview-pic
-                .confirm-review__preview-wrap
-                  .confirm-review__preview-name имя фамилия
-                  .confirm-review__preview-titul программист
-              .confirm-review__preview-rev Пока что у нас получилось так, что во всех элементах списка будет один и тот же текст — это не очень-то интересно.
-              .confirm-review__preview-btns
-                .edit Править
-                .delete Удалить  
+    .reviews#reviews
+      .container.container--reviews
+        .create-review
+          h3.create-review__title Добавить отзыв
+          form.create-review__form-block
+            .create-review__form-avatar
+              .create-review__form-pic-wrap
+              .create-review__form-pic-title добавить фото
+            .create-review__form-info
+              .create-review__form-info-row
+                label.create-review__form-info-name
+                  .create-review__form-info-name-title Имя автора
+                  input(type='text').create-review__form-info-input
+                label.create-review__form-info-titul
+                  .create-review__form-info-titul-title Титул автора
+                  input(type='text').create-review__form-info-input
+              label.create-review__form-info-rev
+                .create-review__form-info-name-title Отзыв
+                textarea(type='text').create-review__form-info-textarea
+              .create-review__form-btns
+                input(type='reset' value='Отмена').create-review__form-info-reset
+                input(type='submit' value='Загрузить').create-review__form-info-submit
+        .confirm-review
+          .load-btn
+            .load-btn-icon
+            .load-btn-title Добавить работу
+          .confirm-review__preview
+            .confirm-review__preview-top
+              .confirm-review__preview-pic-wrap
+                img(src='./assets/images/user.jpg').confirm-review__preview-pic
+              .confirm-review__preview-wrap
+                .confirm-review__preview-name имя фамилия
+                .confirm-review__preview-titul программист
+            .confirm-review__preview-rev Пока что у нас получилось так, что во всех элементах списка будет один и тот же текст — это не очень-то интересно.
+            .confirm-review__preview-btns
+              .edit Править
+              .delete Удалить  
     .overlay
 
 
@@ -199,16 +199,27 @@
   @import "../styles/mixins.pcss";
   @import "../styles/layout/base.pcss";
 
+
+
+
 /* ==========================================Шапка========================*/
+  .app-wrap {
+    height: 100%;
+    width: 100%;
+    background: url('~images/content/Train-Bridge.png');
+    background-size: cover;
+    background-color: #cbccd41a;
+    /* background-color: red; */
+    z-index: 123423;
+  }
+
   .wrapper {
     /* background-color: #cbccd4; */
   }
 
-  .app-wrap {
-    position: relative;
-  }
+  
 
-  .background-img {
+  /* .background-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -219,7 +230,7 @@
     background-size: cover;
     z-index: 2340;
     opacity: 0.1;
-  }
+  } */
 
   
 /*=========================================навигашка===================== */
@@ -227,6 +238,7 @@
     z-index: 11230;
     height: 8vh;
     color:  #9aa0b5;
+    background-color: #fff;
   }
 
   .container--nav {
@@ -317,8 +329,17 @@
 
 /* =======================================Блок Обо мне=================== */
   .about-me {
-    background-color: #cbccd4;
     padding-bottom: 5rem;
+    /* background: url('~images/content/Train-Bridge.jpg')no-repeat;
+    background-size: cover;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    background-color: #cbccd4cc;
+    } */
   }
 
   .about-me__title-wrap {
@@ -655,7 +676,7 @@
 
   /* страница добавление работы============================================================================ */
 .projects {
-  background-color: #cbccd4;
+  /* background-color: #cbccd4; */
   min-height: 50vh;
   padding-bottom: 5rem;
 }
@@ -873,8 +894,8 @@
 
 /* ============================отзывы====================================== */
 .reviews {
-  background-color: #cbccd4;
-  margin-bottom: 4rem;
+  /* background-color: #cbccd4; */
+  padding-bottom: 5rem;
 }
 
 .create-review {
