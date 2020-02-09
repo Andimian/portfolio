@@ -50,6 +50,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "axios": "^0.19.2",
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
     "parallax-js": "^3.1.0",
@@ -60,6 +61,6 @@
     "signale": "^1.4.0",
     "vue": "^2.6.7",
     "vue-flickity": "^1.2.1",
-    "vue-router": "^3.0.2"
+    "vue-router": "^3.1.5"
   }
 }
