@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setAuthHttpHeaderToAxios, getToken, setToken } from '@/helpers/token';
+import { setAuthHttpHeaderToAxios, getToken, setToken } from './helpers/token';
 
 
 axios.defaults.baseURL = "https://webdev-api.loftschool.com";

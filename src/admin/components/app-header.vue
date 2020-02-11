@@ -12,15 +12,7 @@
 
 <script>
 export default {
-    // props: {
-    //     title: String
-    // },
-    // methods: {
-    //     async logout() {
-    //         await localStorage.removeItem('token');
-    //         window.location = window.location.origin
-    //     }
-    // }
+
 }
 </script>
 

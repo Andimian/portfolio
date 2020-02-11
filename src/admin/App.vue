@@ -1,15 +1,15 @@
 <template lang="pug">
   include ../mixins.pug
   .app-wrap
-    template(v-if='$route.meta.public')
-      router-view
+    //- template(v-if='$route.meta.public')
+    //-   router-view
 
-    template(v-else-if='userIsLogged')
-      app-header
-      +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
-        main.content
-          router-view(:pageTitle="$royte.meta.title")
-    //- login
+    //- template(v-else-if='userIsLogged')
+    //-   app-header
+    //-   +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
+    //-     main.content
+    //-       router-view(:pageTitle="$royte.meta.title")
+    login
 </template>
 
 <script>
@@ -20,7 +20,6 @@ import reviews from "./components/pages/reviews.vue";
 
   export default {
     components: {
-    appHeader: () => import('./components/app-header.vue'),
     appHeader: () => import('./components/app-header.vue'),
     login,
     about,

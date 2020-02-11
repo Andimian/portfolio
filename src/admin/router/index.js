@@ -2,15 +2,15 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import routes from "./routes";
 import axios from "axios";
-import { store } from "@/store";
-import requests from "@/requests";
+import { store } from "../store";
+import requests from "../requests";
 
 import { setAuthHttpHeaderToAxios, getToken, removeToken } from '../helpers/token';
 import { request } from "https";
 
 Vue.use(VueRouter);
-// const baseURL = "https://webdev-api.loftschool.com";
-const baseURL = request.defaults.baseURL;
+const baseURL = "https://webdev-api.loftschool.com";
+// const baseURL = request.defaults.baseURL;
 const guard = axios.create({ baseURL });
 const router = new VueRouter({ routes });
 
