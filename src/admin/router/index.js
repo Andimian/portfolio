@@ -3,34 +3,34 @@ import VueRouter from "vue-router";
 import routes from "./routes";
 import axios from "axios";
 import { store } from "../store";
-import requests from '../requests'
+import requests from '@/requests';
 
 import { setAuthHttpHeaderToAxios, getToken, removeToken } from '../helpers/token';
-// import { request } from "https";
+
 
 Vue.use(VueRouter);
-const baseURL = "https://webdev-api.loftschool.com";
-// const baseURL = request.defaults.baseURL;
+// const baseURL = "https://webdev-api.loftschool.com";
+const baseURL = requests.defaults.baseURL;
 const guard = axios.create({ baseURL });
 const router = new VueRouter({ routes });
 
-// router.beforeEach(async (to, from, next) => {
-// 	const isPublicRoute = to.matched.some(record => record.meta.public);
-// 	const isUserLogged = store.getters["user/userIsLogged"];
+router.beforeEach(async (to, from, next) => {
+	const isPublicRoute = to.matched.some(record => record.meta.public);
+	const isUserLogged = store.getters["user/userIsLogged"];
 
-// 	if (isPublicRoute === false && isUserLogged == false) {
-// 		setAuthHttpHeaderToAxios(guard, getToken());
-// 		try {
-// 			const response = await guard.get("/user");
-// 			store.commit("user/SET_USER", response.data.user);
-// 			next();
-// 		} catch (error) {
-// 			router.replace("/login");
-// 			removeToken();
-// 		}
-// 	} else {
-// 		next();
-// 	}
-// });
+	if (isPublicRoute === false && isUserLogged == false) {
+		setAuthHttpHeaderToAxios(guard, getToken());
+		try {
+			const response = await guard.get("/user");
+			store.commit("user/SET_USER", response.data.user);
+			next();
+		} catch (error) {
+			router.replace("/login");
+			removeToken();
+		}
+	} else {
+		next();
+	}
+});
 
 export default router;
