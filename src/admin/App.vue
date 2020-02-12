@@ -1,7 +1,8 @@
 <template lang="pug">
   include ../mixins.pug
   .app-wrap
-    template(v-if='$route.meta.public')
+    //- router-view
+    template(v-if='$router.meta.public')
       router-view
 
     //- template(v-else-if='userIsLogged')
