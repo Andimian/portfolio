@@ -30,7 +30,6 @@
 </template>
 
 <script>
-// import $axios from 'axios';
 import $axios from '@/requests';
 
 export default {
@@ -70,15 +69,28 @@ export default {
                 this.$refs.password.classList.add('is-error');
             };
         },
-        login() {
-            $axios.post("https://webdev-api.loftschool.com" + '/login', this.user).then(response => {
-                console.log(response.data)
-                }).catch(error => {
-                    this.mistakeText = response.data;
-                    this.mistake = true;
-                        })
+        // login() {
+        //     const response = $axios.post('/login', this.user).then(response => {
+        //         // console.log(response.data);
+        //         setToken(token);
+        //         setAuthHttpHeaderToAxios(axios, token);
+        //         this.$router.replace('/');
+        //         }).catch(error => {
+        //             this.mistakeText = response.data;
+        //             this.mistake = true;
+        //                 })
+        // },
+        async login() {
+            try {
+                const response = await $axios.post('/login', this.user);
+                const token = response.data.token;
+                localStorage.setItem('token', token);
+                $axios.defaults.headers["Authorization"] = `Bearer ${token}`;
+                this.$router.replace("/");
+            } catch (error) {
+                console.log('error', error);
+            }
         }
-    
     },
     mounted() {
     }

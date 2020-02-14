@@ -1,15 +1,16 @@
+
 <template lang="pug">
   include ../mixins.pug
   .app-wrap
-    //- router-view
-    template(v-if='$router.meta.public')
+    template(v-if='$route.meta.public')
       router-view
-
-    //- template(v-else-if='userIsLogged')
-    //-   app-header
-    //-   +navInCont('nav', {'Обо мне': 'about-me', 'Работы': 'projects', 'Отзывы': 'reviews'}, 'Обо мне')
-    //-     main.content
-    //-       router-view(:pageTitle="$route.meta.title")
+    template(v-else-if='userIsLogged')
+      app-header
+      +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
+      main.content
+        router-view(:pageTitle="$route.meta.title")
+    //- main.admin__main-container
+    //-   router-view
     //- login
 </template>
 
@@ -18,7 +19,10 @@ import login from "./components/pages/login.vue";
 import about from "./components/pages/about.vue";
 import workPage from "./components/pages/workPage.vue";
 import reviews from "./components/pages/reviews.vue";
-import { store } from "@/store";
+import {mapState, mapActions, mapGetters} from 'vuex';
+import {store} from '@/store';
+
+
   export default {
     components: {
     appHeader: () => import('./components/app-header.vue'),
@@ -29,7 +33,8 @@ import { store } from "@/store";
   },
   data() {
       return {
-          showLogin: true
+          showLogin: true,
+          userIsLogged: store.getters["user/userIsLogged"]
     }
   },
   methods: {
