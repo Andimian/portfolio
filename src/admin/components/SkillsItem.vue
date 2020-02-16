@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
     props: {
         skill: Object, 
@@ -39,7 +40,8 @@ export default {
     },
     data: () => {
         return {
-            isEditMode: false
+            isEditMode: false,
+            editedSkill: { ...this.skill }
         }
     },
     methods: {

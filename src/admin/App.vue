@@ -7,7 +7,6 @@
     template(v-else-if='userIsLogged')
       app-header
       navig
-      //- +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
       main.content
         router-view(:pageTitle="$route.meta.title")
 </template>
@@ -71,12 +70,10 @@ import {store} from '@/store';
     background: url('~images/content/Train-Bridge.png');
     background-size: cover;
     background-color: #cbccd41a;
-    /* background-color: red; */
     z-index: 123423;
   }
 
   .wrapper {
-    /* background-color: #cbccd4; */
   }
 
   

@@ -31,10 +31,10 @@ export default {
 
 <style lang="postcss" scoped>
     .route {
-        margin: 0 0 55px 0;
+        /* margin: 0 0 55px 0;
+         */
+        height: 5rem;
     }
-
-    /* add btn animation */
 
 .add-btn-enter-active, .add-btn-leave-active {
     transition: opacity .3s ease;
