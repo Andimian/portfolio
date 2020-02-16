@@ -1,22 +1,26 @@
 <template lang="pug">
     .about-me#about-me
-        .container.container--about-me
-            .about-me__title-wrap 
-                h1.about-me__title-about Блок "Обо мне"
-                button.about-me__title-ad-group Добавить группу
-            ul.about-me__editor-list
-            //- дефолтная формочка
-            li.about-me__editor-item
-                form.form-new
-                    .form-new__top
-                        input(type="text" name="name" placeholder='название новой группы' required).form-new__top-input
-                        .form-new__top-icons
-                            .form-new__top-icon-default
-                            .form-new__top-icons-edit
-                    .form-new__bottom
-                        input(type="text" name="name" required).form-new__bottom-scill
-                        input(type="number" name="number" placeholder='0').form-new__bottom-percent
-                        .form-new__bottom-icon
+      .container.container--about-me
+          .about-me__title-wrap 
+              h1.about-me__title-about {{pageTitle}}
+              btn
+              //- button.about-me__title-ad-group Добавить группу
+          ul.about-me__editor-list(
+            "adding"
+          )
+          //- дефолтная формочка
+          li.about-me__editor-item
+              form.form-new
+                  .form-new__top
+                      input(type="text" name="name" placeholder='название новой группы' required).form-new__top-input
+                      .form-new__top-icons
+                          .form-new__top-icon-default
+                          .form-new__top-icons-edit
+                  .form-new__bottom
+                      input(type="text" name="name" required).form-new__bottom-scill
+                      input(type="number" name="number" placeholder='0').form-new__bottom-percent
+                      .form-new__bottom-icon
+            
     //- формы с сервера
           li.about-me__editor-item      
             form.form-edit
@@ -84,14 +88,15 @@
 <script>
   export default {
     components: {
-      // appHeader: () => import('./components/app-header.vue')
+      btn: () => import('../btn.vue'),
+    },
+    props: {
+      pageTitle: String,
+      },
     }
-  }
 </script>
 
 <style lang="postcss" scoped>
-
-    /* =======================================Блок Обо мне=================== */
     .about-me {
         padding-bottom: 5rem;
     }
@@ -106,33 +111,7 @@
     margin-right: 4rem;
   }
 
-  .about-me__title-ad-group {
-    position: relative;
-    background-color: transparent;
-    &:after {
-      width: 0.9rem;
-      height: 0.9rem;
-      left: -9.9%;
-      top: 50%;
-      border-radius: 100px;
-      transform: translate(-100%, -50%) rotate(45deg);
-      position: absolute;
-      content: '';
-      background: svg-load("remove.svg", fill=white);
-    }
-
-    &:before {
-      width: 1.5rem;
-      height: 1.5rem;
-      content: '';
-      left: -7%;
-      top: 50%;
-      border-radius: 100px;
-      transform: translate(-100%, -50%);
-      position: absolute;
-      background-color: rgb(11.7%, 11.7%, 86.2%);
-    }
-  }
+  
 
 /* ul с панельками редактора */
   .about-me__editor-list {
