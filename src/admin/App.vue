@@ -2,6 +2,9 @@
 <template lang="pug">
   include ../mixins.pug
   .app-wrap
+    //- app-header
+    //- +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
+    //- router-view
     template(v-if='$route.meta.public')
       router-view
     template(v-else-if='userIsLogged')
@@ -9,8 +12,6 @@
       +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
       main.content
         router-view(:pageTitle="$route.meta.title")
-    //- main.admin__main-container
-    //-   router-view
     //- login
 </template>
 

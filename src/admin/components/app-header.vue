@@ -7,12 +7,17 @@
                 .header__user-name Антон Соколов
             .header__title Панель администрирования
             .header__exit
-                a(href='#').header__exit-link Выйти
+                a(@click="logout").header__exit-link Выйти
 </template>
 
 <script>
 export default {
-
+    methods: {
+        async logout() {
+            await localStorage.removeItem('token');
+            window.location = window.location.origin
+        }
+    }
 }
 </script>
 
