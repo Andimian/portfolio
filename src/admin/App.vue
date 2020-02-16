@@ -2,17 +2,14 @@
 <template lang="pug">
   include ../mixins.pug
   .app-wrap
-    //- app-header
-    //- +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
-    //- router-view
     template(v-if='$route.meta.public')
       router-view
     template(v-else-if='userIsLogged')
       app-header
-      +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
+      navig
+      //- +navInCont('nav', {'Обо мне': 'about', 'Работы': 'workPage', 'Отзывы': 'reviews'}, 'Обо мне')
       main.content
         router-view(:pageTitle="$route.meta.title")
-    //- login
 </template>
 
 <script>
@@ -27,6 +24,7 @@ import {store} from '@/store';
   export default {
     components: {
     appHeader: () => import('./components/app-header.vue'),
+    navig: () => import('./components/navig.vue'),
     login,
     about,
     workPage,
@@ -87,101 +85,6 @@ import {store} from '@/store';
   } */
 
   
-/*=========================================навигашка===================== */
-  .nav {
-    z-index: 11230;
-    height: 8vh;
-    color:  #9aa0b5;
-    background-color: #fff;
-  }
-
-  .container--nav {
-    display: flex;
-    align-items: center;
-    padding-left: 5%;
-  }
-
-  .nav__list {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .nav__item {
-    z-index: 11230;
-    margin-right: 5%;
-    height: 100%;
-    padding-top: 2%;
-    position: relative;
-    &:last-child {
-    margin-right: 0;
-    }
-    &:hover {
-    color:orange;
-    transition: .2s;
-    }
-    &:before {
-      position: absolute;
-      content: "";
-      height: 2px;
-      width: 0;
-      background-color: orange;
-      transition: width .2s ease-in-out, left .2s ease-in-out;
-      left: 50%;
-      bottom: 0;
-    }
-    &:after {
-      position: absolute;
-      content: "";
-      height: 2px;
-      width: 0;
-      background-color: orange;
-      transition: width .2s ease-in-out;
-      left: 50%;
-      bottom: 0;
-    }
-    &:hover:before{
-      width: 60%;
-      left: -10%;
-    }
-    &:hover::after{
-      width: 60%;
-    }
-
-    &--active {
-      color: orange;
-      &:before {
-      position: absolute;
-      content: "";
-      height: 2px;
-      width: 0;
-      background-color: orange;
-      transition: width .2s ease-in-out, left .2s ease-in-out;
-      left: 50%;
-      bottom: 0;
-      width: 60%;
-      left: -10%;
-      }
-      &:after {
-        position: absolute;
-        content: "";
-        height: 2px;
-        width: 0;
-        background-color: orange;
-        transition: width .2s ease-in-out;
-        left: 50%;
-        bottom: 0;
-        width: 60%;
-      }
-    }
-  }
-
-  .nav__link {
-  }
-
-
-
 
 
 
