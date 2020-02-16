@@ -1,0 +1,134 @@
+.skills-list {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	flex-grow: 1;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		font-weight: 400;
+	}
+
+	&__input {
+		background: none;
+		border: none;
+		font-weight: 400;
+		font-size: 18px;
+		color: #414c63;
+		position: relative;
+		padding-bottom: 15px;
+		border-bottom: 1px solid transparent;
+		transition: border-color 0.3s;
+		max-width: 100%;
+		width: 100%;
+		font-size: 16px;
+
+		&::placeholder {
+			transition: opacity 0.3s;
+		}
+
+		&:focus {
+			border-color: #414c63;
+
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+
+		&--header {
+			width: 70%;
+			padding-bottom: 15px;
+		}
+
+		&--percent {
+			width: 60px;
+			border-bottom: 1px solid #414c63;
+		}
+
+		&--footer {
+			border-bottom: 1px solid #414c63;
+		}
+
+		&--border {
+			border-bottom: 1px solid #414c63;
+		}
+
+		&--name {
+			border-bottom: 1px solid #414c63;
+		}
+	}
+
+	&__skill-name {
+		flex-grow: 1;
+
+		&--footer {
+			flex-grow: 0;
+			width: 50%;
+		}
+	}
+
+	&__skill-percent-container {
+		margin-left: auto;
+		position: relative;
+		margin-left: 20px;
+		flex-grow: 0;
+		width: 60px;
+		max-width: 100px;
+		border-bottom: 1px solid transparent;
+
+		&:before {
+			display: block;
+			content: "%";
+			position: absolute;
+			right: 0;
+			color: rgba(#414c63, 0.5);
+		}
+	}
+
+	&__skill-percent {
+		position: relative;
+		color: #414c63;
+		padding-bottom: 15px;
+	}
+
+
+	&__skill-title {
+		padding-bottom: 15px;
+	}
+
+    &__skill-edit {
+		margin-left: 60px;
+		padding-bottom: 15px;
+	}
+
+	&__skill-edit-btn {
+		width: 10px;
+		height: 10px;
+		transition: opacity .3s;
+
+		&--edit {
+		}
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: auto;
+		padding-top: 40px;
+
+		&.is-disabled {
+			.skills-list__skill-name,
+			.skills-list__skill-percent,
+			.skills-list__footer-btn {
+				pointer-events: none;
+				color: gray;
+			}
+		}
+	}
+
+	&__footer-btn {
+		margin-left: 20px;
+	}
+}

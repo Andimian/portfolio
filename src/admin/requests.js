@@ -1,23 +1,22 @@
-import axios from "axios";
-import { setAuthHttpHeaderToAxios, getToken, setToken } from './helpers/token';
 
+
+import axios from "axios";
+
+const token = localStorage.getItem("token");
 
 axios.defaults.baseURL = "https://webdev-api.loftschool.com";
-const token = getToken();
-if(token) setAuthHttpHeaderToAxios(axios, token);
+axios.defaults.headers["Authorization"] = `Bearer ${token}`;
 
 axios.interceptors.request.use(
-	response => {
-		return response;
+	function(config) {
+		return config;
 	},
-	error => {
+	function(error) {
 		const originalRequest = error.config;
-
 		if (error.response == 401) {
-			return axios.post("/refreshToken").then(response => {
-				const token = response.data.token;
-				setToken(token);
-				setAuthHttpHeaderToAxios(axios, token);
+			return axios.post("/refreshToken").then(res => {
+				const token = res.data.token;
+				localStorage.setItem("token", token);
 				originalRequest.headers["Authorization"] = `Bearer ${token}`;
 
 				return axios(originalRequest);

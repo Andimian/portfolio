@@ -1,0 +1,136 @@
+.add-review {
+    display: flex;
+    
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        flex-flow: row wrap;
+    }
+
+    &__avatar-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__author-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #dee4ed;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__add-photo-btn {
+        margin-top: 20px;
+    }
+
+    &__file-input {
+        display: none;
+    }
+
+    &__desc-block {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+    }
+
+    &__desc-row {
+        display: flex;
+
+        &:nth-child(n+2) {
+            margin-top: 40px;
+        }
+    }
+
+    &__input-block {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        &:nth-child(n+2) {
+            margin-left: 30px;
+        }        
+    }
+
+    &__label {
+        font-weight: 600;
+        color: #bcbec3;
+        font-size: 16px;
+    }
+
+    &__input {
+        flex-grow: 1;
+        border: none;
+        border-bottom: 1px solid #000;
+        padding-bottom: 15px;
+        margin-top: 15px;
+        font-weight: 600;
+        color: #414c63;
+
+        &--text {
+            resize: none;
+            height: 145px;
+            border: 1px solid #bcbec3;
+            padding: 15px;
+            line-height: 30px;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 40px;
+    }
+
+    &__footer-btn {
+        &:nth-child(n+2) {
+            margin-left: 30px;
+        }
+    }
+}
+
+@include phones {
+
+    .add-review {
+        align-items: center;
+        justify-content: center;
+
+        &__container {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &__avatar-block {
+            width: 100%;
+            align-items: center; 
+            justify-content: center;
+        }
+
+        &__desc-block {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 40px;
+        }
+
+        &__desc-row {
+            flex-direction: column;
+        }
+
+        &__input-block {
+
+            &:nth-child(n+2) {
+                margin-left: 0;
+                margin-top: 40px;
+            }
+        }
+
+        &__footer {
+            justify-content: center;
+        }
+    }
+}

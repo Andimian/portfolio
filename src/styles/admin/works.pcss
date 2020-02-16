@@ -1,0 +1,95 @@
+.works {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__works-container  {
+        margin-top: 35px;
+    }
+
+    &__works-list {
+        display: flex;
+        align-items: stretch;
+        margin-top: -30px;
+        flex-flow: row wrap;
+    }
+
+    &__work-item {
+        display: flex;
+        align-items: stretch;
+        width: 30%;
+        margin: 30px 30px 0 0;
+        flex-shrink: 0;
+    }
+
+    &__add-work-btn {
+       flex-grow: 1;
+       display: flex;
+       align-items: stretch;
+    }
+
+    &__work-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__work-desc {
+        margin-top: 10px;
+        line-height: 30px;
+        color: #8c92a0;
+    }
+
+    &__work-link-container {
+        margin-top: 20px;
+    }
+
+    &__work-link {
+		font-size: 16px;
+		color: #383bcf;
+		transition: opacity .3s;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+    &__work-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 45px;
+    }
+}
+
+@include tablets {
+    .works {
+
+        &__works-list {
+            justify-content: space-between;
+        }
+
+        &__work-item {
+            width: calc(50% - 15px);
+            margin: 0 0 30px 0;
+        }
+    }
+}
+
+@include phones {
+    .works {
+
+        &__container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__works-list {
+            align-items: center;
+        }
+
+        &__work-item {
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+    }
+}

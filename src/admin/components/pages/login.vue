@@ -32,7 +32,6 @@
 <script>
 import $axios from '@/requests';
 import {mapState, mapActions, mapGetters} from 'vuex';
-
 export default {
     data() {
         return {
@@ -53,18 +52,14 @@ export default {
         checkForm(e) {
             e.preventDefault();
             this.clearErrors();
-
             if(this.user.name && this.user.password) {
                 return true
             };
-
             this.errors = [];
-
             if(!this.user.name) {
                 this.errors.push('Введите имя');
                 this.$refs.username.classList.add('is-error');
             };
-
             if(!this.user.password) {
                 this.errors.push('Введите пароль');
                 this.$refs.password.classList.add('is-error');
@@ -101,37 +96,31 @@ export default {
     background-color: rgba(#2d3c4e, .9);
     z-index: 10;
     color: #414c63;
-
     &__card {
         padding: 60px;
         background-color: #ffffff;
         min-width: 560px;
         position: relative;
     }
-
     &__close-btn {
         position: absolute;
         top: 30px;
         right: 30px;
     }
-
     &__form {
         display: flex;
         flex-direction: column;
     }
-
     &__form-title {
         font-size: 36px;
         font-weight: 700;
         text-align: center;
     }
-
     &__input-block {
         display: flex;
         flex-direction: column;
         margin-top: 40px;
         position: relative;
-
         &:after {
 			display: block;
 			content: 'Какая-то ошибка';
@@ -147,7 +136,6 @@ export default {
 			opacity: 0;
 			transition: opacity .3s;
 		}
-
         &:before {
             display: block;
             content: '';
@@ -158,15 +146,12 @@ export default {
             bottom: 15px;
             z-index: 10;
         }
-
         &--login:before {
             background: svg-load('user.svg', fill="#c6c9d0" ,width="100%", height="100%");
         }
-
         &--pass:before {
             background: svg-load('key.svg', fill="#c6c9d0" ,width="100%", height="100%");;
         }
-
         &.is-error {
             &:after {
                 opacity: 1;
@@ -175,16 +160,13 @@ export default {
                 border-color: #f00;
             }
         }
-
     }
-
     &__label {
         color: rgba(#414c63, .3);
         font-size: 16px;
         font-weight: 400;
         padding-left: 45px;
     }
-
     &__input {
         margin-top: 15px;
         padding: 0 0 15px 45px;
@@ -195,7 +177,6 @@ export default {
         color: #414c63;
         position: relative;
     }
-
     &__btn {
         margin: 50px auto 0;
         margin-bottom: 3rem;
@@ -207,10 +188,8 @@ export default {
         }
     }
 }
-
 @include phones {
     .app-login {
-
         &__card {
             display: flex;
             width: 100%;
@@ -219,21 +198,15 @@ export default {
             align-items: center;
             justify-content: center;
         }
-
         &__btn {
             max-width: 100%;
         }
     }
 }
-
 .tooltip {
     /* background-color: #414c63; */
     widows: 200px;
     height: 100px;
     
 }
-
-
 </style>
-
-

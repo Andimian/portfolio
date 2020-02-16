@@ -1,0 +1,62 @@
+.reviews {
+
+    &__reviews-container {
+        margin-top: 40px;
+    }
+
+    &__reviews-list {
+        display: flex;
+        align-items: stretch;
+        flex-flow: row wrap;
+    }
+
+    &__reviews-item {
+        width: calc(33% - 30px);
+        margin: 0 30px 30px 0;
+    }
+
+    &__review-text {
+        font-size: 16px;
+        line-height: 30px;
+        color: #7a8191;
+        padding-bottom: 40px;
+    }
+
+    &__review-footer {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@include tablets {
+    .reviews {
+
+        &__reviews-item {
+            width: calc(50% - 30px);
+        }
+    }
+}
+
+@include phones {
+    .reviews {
+
+        &__container {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &__reviews-list {
+            margin: 0;
+        }
+
+        &__reviews-item {
+            width: 100%;
+            margin: 0;
+
+            &:nth-child(n+2) {
+                margin-top: 20px;
+            }
+        }
+    }
+}
