@@ -41,6 +41,16 @@
                     @click="closeAddSkillForm"
                 )
 
+        //- review
+        .card__header(v-else-if="type == 'review'")
+            .card__review-author
+                .card__author-photo
+                    img.card__author-avatar(:src="authorAvatarUrl ? authorAvatarUrl : defaultReviewAvatarUrl")
+                .card__author-info
+                    .card__author-name {{ author }}
+                    .card__author-position {{ authorPosition }}
+
+    
         .card__body
             slot
 </template>

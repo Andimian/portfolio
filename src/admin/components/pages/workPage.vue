@@ -3,6 +3,7 @@
         route-info(
             pageTitle="Работы"
         )
+     
 </template>
 
 <script>

@@ -79,5 +79,10 @@ import {store} from '@/store';
     /* background-color: #cbccd4; */
   }
 
+  
+
+
+
+
 </style>
 

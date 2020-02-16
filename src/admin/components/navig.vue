@@ -106,7 +106,7 @@ export default {
             width: 60%;
         }
 
-        &--active {
+        &.active {
             color: orange;
             &:before {
                 position: absolute;
