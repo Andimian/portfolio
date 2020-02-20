@@ -1,5 +1,9 @@
 import Vue from 'vue'
+import axios from "axios";
 
+const $axios = axios.create({
+	baseURL: "http://localhost:8000"
+});
 
 const skill = {
 	template: '#skill',
@@ -50,6 +54,9 @@ new Vue({
 		}
 	},
 	created() {
+		var id = axios.get("/user");
+		console.log(id);
+		(id.id);
 		const data = require('../data/skills.json');
 
 		this.data = data

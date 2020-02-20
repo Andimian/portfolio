@@ -37,7 +37,7 @@
                                             )
                                         
                                         .add-review__input-block
-                                            label(for="author-position").add-review__label Титут автора
+                                            label(for="author-position").add-review__label Титул автора
                                             input.add-review__input.add-review__input--position#author-position(
                                                 v-model="review.occ"
                                             )

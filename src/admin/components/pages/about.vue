@@ -95,6 +95,8 @@ export default {
             try {
                 await this.removeCategory(categoryId)
                 await this.fetchCategories();
+                console.log('f');
+                
             } catch (error) {
                 console.log('error.message', error.message);
             }
